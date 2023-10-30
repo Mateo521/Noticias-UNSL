@@ -80,7 +80,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%); ">
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
-            <div class="grid-container w-full">
+            <div class="grid-container-1 w-full">
                 <div class="item1 relative">
 
                     <div class="w-full h-full" style="background-image:url(https://picsum.photos/1200/700.jpg?page=3);">
@@ -89,11 +89,11 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%); ">
                             <h5 class="text-sm relative" style="z-index:5;"> | Espacio de intercambio académico y prductivo</h5>
                             <p class="text-xl relative" style="z-index:5;">Universidad Siglo 21 celebró “Semana 21” junto a múltiples empresas nacionales e internacionales</p>
 
-                          
+
                         </div>
                         <div class="absolute left-0 bottom-0 w-full" style=" z-index:0; background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height:100%;">
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="item2 relative">
@@ -104,11 +104,11 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                             <h5 class="text-sm relative" style="z-index:5;"> | Espacio de intercambio académico y prductivo</h5>
                             <p class="text-xl relative" style="z-index:5;">Universidad Siglo 21 celebró “Semana 21” junto a múltiples empresas nacionales e internacionales</p>
 
-                          
+
                         </div>
                         <div class="absolute left-0 bottom-0 w-full" style=" z-index:0; background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height:100%;">
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="item3 relative">
@@ -119,11 +119,11 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                             <h5 class="text-sm relative" style="z-index:5;"> | Espacio de intercambio académico y prductivo</h5>
                             <p class="text-xl relative" style="z-index:5;">El reconocido dibujante Rep brindará una charla en la UNLa</p>
 
-                           
+
                         </div>
                         <div class="absolute left-0 bottom-0 w-full" style=" z-index:0; background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height:100%;">
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="item4 relative">
@@ -134,11 +134,11 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                             <h5 class="text-sm relative" style="z-index:5;"> | Espacio de intercambio académico y prductivo</h5>
                             <p class="text-xl relative" style="z-index:5;">Mammarella: “Estamos ratificando a la Educación como un derecho”</p>
 
-                          
+
                         </div>
                         <div class="absolute left-0 bottom-0 w-full" style=" z-index:0; background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height:100%;">
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="item5 relative">
@@ -149,11 +149,11 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                             <h5 class="text-sm relative" style="z-index:5;"> | Espacio de intercambio académico y prductivo</h5>
                             <p class="text-xl relative" style="z-index:5;">El verano ya está llegando al Centro Cultural Rojas</p>
 
-                         
+
                         </div>
                         <div class="absolute left-0 bottom-0 w-full" style=" z-index:0; background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height:100%;">
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="item6 relative">
@@ -164,20 +164,59 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                             <h5 class="text-sm relative" style="z-index:5;"> | Espacio de intercambio académico y prductivo</h5>
                             <p class="text-xl relative" style="z-index:5;">Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
 
-                          
+
                         </div>
                         <div class="absolute left-0 bottom-0 w-full" style=" z-index:0; background: rgb(0,0,0);
 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height:100%;">
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="grid-container-2 w-full m-2 text-white">
+                <div class="item7 p-2" >
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=9" alt="">
+                    <div >
+                        <h2>Prueba</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item8 p-2" >
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=10" alt="">
+                    <div>
+                        <h2>Prueba</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item9 p-2" >
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=11" alt="">
+                    <div>
+                        <h2>Prueba</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item10 p-2" >
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=12" alt="">
+                    <div>
+                        <h2>Prueba</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item11 p-2" >
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=13" alt="">
+                    <div>
+                        <h2>Prueba</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-<style>
 
-</style>
 
 <?php
 get_footer();
