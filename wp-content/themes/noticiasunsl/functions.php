@@ -32,6 +32,8 @@ function linksnoticias_unsl_scripts()
 
 add_action('wp_enqueue_scripts', 'linksnoticias_unsl_scripts');
 
+function my_function_admin_bar(){ return false; }
+add_filter( 'show_admin_bar' , 'my_function_admin_bar');
 
 
 ?>
