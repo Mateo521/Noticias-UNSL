@@ -3,6 +3,9 @@ get_header();
 ?>
 
 
+
+
+
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden md:h-96">
@@ -88,7 +91,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%); ">
 
 <div class="flex justify-center py-8">
     <div class="w-full">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
             <div class="grid-container-1 w-full">
                 <div class="item1 relative">
 
@@ -184,6 +187,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 
 
+
             <div class="grid-container-2 w-full mx-2 text-white">
                 <div class="item7 p-2">
                     <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=9" alt="">
@@ -227,14 +231,279 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 </div>
 
 
-<div class="relative p-1">
-        <img class="w-full" src="https://www.telam.com.ar/advf/imagenes/2023/10/65328e2fe891d.jpg" alt="">
+<div class="relative p-1 hidden md:block" style=" object-fit:cover;">
+    <img class="w-full h-full" src="https://www.telam.com.ar/advf/imagenes/2023/10/65328e2fe891d.jpg" alt="">
     <div class="absolute bottom-0 text-white p-5">
-        
-        <h1 class="text-4xl">ENTREVISTA EXCLUSIVA AL PAPA FRANCISCO  </h1>
-        <p class="text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
+
+        <h1 class="md:text-4xl">ENTREVISTA EXCLUSIVA AL PAPA FRANCISCO </h1>
+        <p class="md:text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
+    </div>
+</div>
+<div class="relative p-1 md:hidden block" style=" object-fit:cover;">
+    <img class="w-full h-full" src="https://www.telam.com.ar/advf/imagenes/2023/10/6532bfe4bc1ca.jpg" alt="">
+    <div class="absolute bottom-0 text-white p-5">
+
+        <h1 class="md:text-4xl">ENTREVISTA EXCLUSIVA AL PAPA FRANCISCO </h1>
+        <p class="md:text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
+    </div>
+</div>
+
+
+<!--
+<?php
+$key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
+$canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
+$max = '5';
+$videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . ''));
+
+?>
+<div class="flex justify-center py-8">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto  w-full h-full">
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+                <?php
+                foreach ($videos->items as $video) {
+                    if (isset($video->id->videoId)) {
+                ?>
+
+                        <div class="swiper-slide">
+                            <?php echo ('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' . $video->id->videoId . '" frameborder="0" allowfullscreen></iframe>') ?>
+                        </div>
+                <?php }
+                } ?>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <?php
+                foreach ($videos->items as $video) {
+                    $video_id = explode("?v=", 'http://www.youtube.com/watch?v=' . $video->id->videoId . '');
+                    $video_id = $video_id[1];
+                    $thumbnail = "http://img.youtube.com/vi/" . $video_id . "/1.jpg";
+                    if (isset($video->id->videoId)) {
+                ?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo ($thumbnail) ?>" class="w-full" />
+                        </div>
+                <?php }
+                } ?>
+            </div>
         </div>
     </div>
+</div>
+
+            -->
+
+<div class="flex justify-center py-8">
+    <div class="w-full">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
+
+
+
+
+
+
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper3">
+
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+
+                        <div class="grid md:grid-cols-2 items-center">
+                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=1" />
+
+                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid md:grid-cols-2 items-center">
+                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=2" />
+
+                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid md:grid-cols-2 items-center">
+                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=3" />
+
+                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid md:grid-cols-2 items-center">
+                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=4" />
+
+                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next" style="z-index:50;"></div>
+                <div class="swiper-button-prev" style="z-index:50;"></div>
+                <div class="swiper-pagination"></div>
+
+            </div>
+
+
+            <div thumbsSlider="" class="swiper mySwiper  ">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://picsum.photos/1100/700.jpg?page=1" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://picsum.photos/1100/700.jpg?page=2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://picsum.photos/1100/700.jpg?page=3" />
+                    </div>
+                    <div class="swiper-slide">
+
+                        <img src="https://img.freepik.com/foto-gratis/fondo-producto-pared-negro-oscuro-liso_53876-129678.jpg?t=st=1698705032~exp=1698705632~hmac=b3df4b4f5bb274120d3da8b84c27c551b401f9e62541cac18653" />
+                        <p class="absolute text-white">Ver más</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <p>AUDIOVISUAL</p>
+            <div class="grid-container-3 w-full mx-2">
+                <div class="item1">A</div>
+                <div class="item2">B</div>
+                <div class="item3">C</div>
+                <div class="item4">D</div>
+                <div class="item5">E</div>
+                <div class="item6">F</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    iframe {
+        height: 500px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: black;
+    }
+
+    /*
+    .swiper-pagination,
+    .swiper-pagination-current span {
+        color: white;
+    }
+*/
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-wrapper {
+        align-items: flex-end;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+    .swiper {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .mySwiper2 {
+        height: 100%;
+        width: 100%;
+        max-width: 950px;
+    }
+
+    .mySwiper {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+        width: 25%;
+        height: 200px;
+        opacity: 0.4;
+    }
+
+    .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+</style>
+
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+    var swiper3 = new Swiper(".mySwiper3", {
+        loop: false,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+</script>
+<style>
+    .swiper {
+        height: 100%;
+    }
+</style>
+
 
 <?php
 get_footer();

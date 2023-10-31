@@ -7,7 +7,7 @@ Description:Pagina personalizada para Noticias UNSL por el Matu
 Requires at least: 6.1
 Tested up to: 6.3
 Requires PHP: 5.6
-Version: 0.893
+Version: 0.898
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: Radio Universidad
@@ -17,7 +17,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   --main-bg-color: #07293B;
   --container-1-bg-color: #0d222d;
   --container-1-color :#efd85c ;
-  
+  --container-bd-color :#7F9CC6 ;
   
 }
 .item1 { grid-area: a; }
@@ -40,7 +40,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .fond-nav{
   background-color:var(--main-bg-color);
 }
-.item7 { grid-area: a; 
+.item7 { 
+  grid-area: a; 
     border-bottom: 1px solid white;
   width:100%;
 }
@@ -75,6 +76,21 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 }
 .header-m{height:108px;}
 @media screen and (max-width:980px){
+  .grid-container-2 { gap : 10px;
+  }
+  .item7 {border:solid var(--container-bd-color) 1px;
+}
+.item8 { border:solid var(--container-bd-color) 1px;
+ //   border-top: 1px solid white;
+}
+.item9 { border:solid var(--container-bd-color) 1px;
+  
+}
+.item10 { border:solid var(--container-bd-color) 1px;
+}
+.item11 {border:solid var(--container-bd-color) 1px;
+  //  border-top: 1px solid white;
+}
     .header-m{
         height:75px;
     }
@@ -89,6 +105,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     }
 }
 @media screen and (max-width:550px){
+
   .grid-container-2 {
     height:100%;
   grid-template-columns: 1fr;
@@ -99,7 +116,6 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     'd'
     'e';
 }
-
     .grid-container-1 {
      
         grid-template-areas:
@@ -116,3 +132,18 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .title-c {
   color:var(--container-1-color);
 }
+
+
+
+.grid-container-3 {
+
+
+  display: grid;
+  grid-template-areas:
+  'a a a b'
+  'a a a c'
+  'a a a d'
+  'a a a e'
+  'a a a f';
+}
+
