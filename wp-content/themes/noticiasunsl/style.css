@@ -7,12 +7,19 @@ Description:Pagina personalizada para Noticias UNSL por el Matu
 Requires at least: 6.1
 Tested up to: 6.3
 Requires PHP: 5.6
-Version: 0.85
+Version: 0.893
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: Radio Universidad
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+:root {
+  --main-bg-color: #07293B;
+  --container-1-bg-color: #0d222d;
+  --container-1-color :#efd85c ;
+  
+  
+}
 .item1 { grid-area: a; }
 .item2 { grid-area: b; }
 .item3 { grid-area: c; }
@@ -30,19 +37,21 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   padding: 10px;
 }
 
-
+.fond-nav{
+  background-color:var(--main-bg-color);
+}
 .item7 { grid-area: a; 
     border-bottom: 1px solid white;
   width:100%;
 }
 .item8 { grid-area: b; 
     width:100%;
-    border-top: 1px solid white;
+ //   border-top: 1px solid white;
 }
 .item9 { grid-area: c; 
     width:100%;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 .item10 { grid-area: d; 
     width:100%;
@@ -50,10 +59,10 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 }
 .item11 { grid-area: e; 
     width:100%;
-    border-top: 1px solid white;
+  //  border-top: 1px solid white;
 }
 .grid-container-2 {
-    background-color:#50647B;
+    background-color:var(--container-1-bg-color);
     height: 700px;
     width:100%;
   display: grid;
@@ -80,6 +89,17 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     }
 }
 @media screen and (max-width:550px){
+  .grid-container-2 {
+    height:100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'a'
+    'b'
+    'c'
+    'd'
+    'e';
+}
+
     .grid-container-1 {
      
         grid-template-areas:
@@ -90,15 +110,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
         'e e'
         'f f';
     }
-
-    .grid-container-2 {
-        height:100%;
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        'a'
-        'b'
-        'c'
-        'd'
-        'e';
 }
 
+   
+.title-c {
+  color:var(--container-1-color);
+}

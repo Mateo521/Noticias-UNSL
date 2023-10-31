@@ -72,7 +72,7 @@
 
   
 
-  <div class="flex justify-center items-center fixed w-full text-white relative" style="background-color: #07293B;">
+  <div class="flex justify-center items-center fixed w-full text-white relative fond-nav" >
 
 
     <div class="w-full">

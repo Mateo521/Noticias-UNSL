@@ -77,6 +77,15 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%); ">
     </button>
 </div>
 
+
+
+
+
+
+
+
+
+
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
@@ -175,39 +184,39 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 
 
-            <div class="grid-container-2 w-full m-2 text-white">
-                <div class="item7 p-2" >
+            <div class="grid-container-2 w-full mx-2 text-white">
+                <div class="item7 p-2">
                     <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=9" alt="">
-                    <div >
-                        <h2>Prueba</h2>
-                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    <div>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
+                        <p>Cuanto influye la suerte para tener una carrera profesional exitosa</p>
                     </div>
                 </div>
-                <div class="item8 p-2" >
+                <div class="item8 p-2">
                     <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=10" alt="">
                     <div>
-                        <h2>Prueba</h2>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
                         <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
                     </div>
                 </div>
-                <div class="item9 p-2" >
+                <div class="item9 p-2">
                     <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=11" alt="">
                     <div>
-                        <h2>Prueba</h2>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
                         <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
                     </div>
                 </div>
-                <div class="item10 p-2" >
+                <div class="item10 p-2">
                     <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=12" alt="">
                     <div>
-                        <h2>Prueba</h2>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
                         <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
                     </div>
                 </div>
-                <div class="item11 p-2" >
+                <div class="item11 p-2">
                     <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=13" alt="">
                     <div>
-                        <h2>Prueba</h2>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
                         <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
                     </div>
                 </div>
@@ -217,6 +226,15 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
     </div>
 </div>
 
+
+<div class="relative p-1">
+        <img class="w-full" src="https://www.telam.com.ar/advf/imagenes/2023/10/65328e2fe891d.jpg" alt="">
+    <div class="absolute bottom-0 text-white p-5">
+        
+        <h1 class="text-4xl">ENTREVISTA EXCLUSIVA AL PAPA FRANCISCO  </h1>
+        <p class="text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
+        </div>
+    </div>
 
 <?php
 get_footer();
