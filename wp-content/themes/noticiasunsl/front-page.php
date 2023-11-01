@@ -294,37 +294,38 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                     <div class="swiper-slide">
 
                         <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=1" />
+                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=1" />
 
                             <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=2" />
+                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=2" />
 
                             <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=3" />
+                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=3" />
 
                             <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=4" />
+                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=4" />
 
                             <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-button-next" style="z-index:50;"></div>
                 <div class="swiper-button-prev" style="z-index:50;"></div>
-                <div class="swiper-pagination"></div>
 
+                <div class="swiper-pagination"></div>
             </div>
 
 
@@ -367,33 +368,6 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
             );
             */
             ?>
-            <div class="grid-container-3 w-full mx-2">
-                <div class="item1" id="item1">
-                    <!-- Aquí se mostrará el video -->
-                    <div class="flex h-full" style="flex-direction:column;">
-                        <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/Xao20KgGzVU" frameborder="0" allowfullscreen></iframe>
-                        <p>Titulo</p>
-                    </div>
-                </div>
-                <?php if (!empty($videos)) {
-                    foreach ($videos['items'] as $index => $video) {
-                        // Accede a las miniaturas del video
-                        $thumbnails = $video['snippet']['thumbnails'];
-                        // Obtén la URL de la miniatura por defecto (medium)
-                        $thumbnail_url = $thumbnails['medium']['url'];
-                ?>
-                        <div class="<?php echo ('item' . $index + 1) ?>">
-                            <div class="flex items-center gap-3">
-                                <img style="width:135px; height:95px;" src="<?php echo $thumbnail_url; ?>">
-                                <p><?php echo $video['snippet']['title']; ?></p>
-                            </div>
-                        </div>
-                <?php
-                    }
-                }
-                ?>
-
-            </div>
 
 
 
@@ -401,6 +375,53 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
     </div>
 </div>
 
+<div class="flex justify-center py-8 text-white">
+    <div class="w-full" style="background-color:#04303c;">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
+            <div class="grid-container-3 w-full p-3">
+                <div class="item1" id="item1">
+                    <!-- Aquí se mostrará el primer video de la API -->
+                    <?php if (!empty($videos)) {
+                        // Muestra el primer video de la API
+                        $primer_video = $videos['items'][0];
+                        $thumbnails = $primer_video['snippet']['thumbnails'];
+                        $thumbnail_url = $thumbnails['medium']['url'];
+                    ?>
+                        <div class="flex h-full" style="flex-direction:column;">
+                            <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $primer_video['id']['videoId']; ?>" frameborder="0" allowfullscreen></iframe>
+                        <!--    <p class="text-xl py-5"><?php echo $primer_video['snippet']['title']; ?></p> -->
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <?php
+                for ($index = 0; $index < count($videos['items']) - 1; $index++) {
+                    $video = $videos['items'][$index];
+                    $thumbnails = $video['snippet']['thumbnails'];
+                    $thumbnail_url = $thumbnails['medium']['url'];
+                ?>
+                    <!-- Contenido de la miniatura -->
+                    <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['id']['videoId']; ?>">
+                        <div class="grid items-center gap-3 grid-cols-2">
+                            <div class="relative w-full h-full">
+                              
+                                    <img class="absolute" style="left:50%;top:50%; transform:translate(-50%,-50%)" width="35" height="35" src="<?php echo get_template_directory_uri(); ?>/assets/images/pngegg.png" alt="">
+                              
+                                <img class="w-full h-full" src="<?php echo $thumbnail_url; ?>">
+                            </div>
+
+
+                            <p class="text"><?php echo $video['snippet']['title']; ?></p>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -414,12 +435,13 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
         color: black;
     }
 
-    /*
+    
     .swiper-pagination,
     .swiper-pagination-current span {
-        color: white;
+      position:relative;
+      padding:10px;
     }
-*/
+
     .swiper {
         width: 100%;
         height: 100%;
@@ -481,14 +503,6 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 
 <script>
-    function replaceVideo(videoUrl, videoId) {
-        var videoPlayer = document.getElementById('videoPlayer');
-
-        if (videoPlayer) {
-            videoPlayer.src = videoUrl;
-        }
-    }
-
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         spaceBetween: 10,
