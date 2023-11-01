@@ -377,7 +377,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 <div class="flex justify-center py-8 text-white">
     <div class="w-full" style="background-color:#04303c;">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
+        <div class="max-w-screen-xl flex flex-wr items-center justify-between mx-auto w-full">
             <div class="grid-container-3 w-full p-3">
                 <div class="item1" id="item1">
                     <!-- Aquí se mostrará el primer video de la API -->

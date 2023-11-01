@@ -51,8 +51,8 @@ function obtener_videos_de_youtube() {
     if ($cached_results) {
         return $cached_results;
     } else {
-       // $key = "AIzaSyCLEonsCv5imHZdQStrKrBUyINIr27f2jg";
-        $key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
+        //$key = 
+  
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
