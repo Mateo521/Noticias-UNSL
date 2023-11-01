@@ -250,13 +250,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 
 <!--
-<?php
-$key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
-$canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
-$max = '5';
-$videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . ''));
 
-?>
 <div class="flex justify-center py-8">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto  w-full h-full">
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
@@ -265,13 +259,11 @@ $videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/s
                 foreach ($videos->items as $video) {
                     if (isset($video->id->videoId)) {
                 ?>
-
                         <div class="swiper-slide">
                             <?php echo ('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' . $video->id->videoId . '" frameborder="0" allowfullscreen></iframe>') ?>
                         </div>
                 <?php }
                 } ?>
-
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -293,22 +285,11 @@ $videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/s
             </div>
         </div>
     </div>
-</div>
-
-            -->
-
+</div> -->
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
-
-
-
-
-
-
             <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper3">
-
-
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
 
@@ -369,20 +350,59 @@ $videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/s
 
             </div>
 
-
+            <!--  <iframe class="w-full h-full" src="https://www.youtube.com/embed/oHg5SJYRHA0" title="RickRoll&#39;D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              -->
             <p>AUDIOVISUAL</p>
+
+            <?php
+            $videos = obtener_videos_de_youtube();
+            /*
+            $videos = array(
+                "item2" => "https://www.youtube.com/embed/Xao20KgGzVU",
+                "item3" => "https://www.youtube.com/embed/wXnJArjhW1M",
+                "item4" => "https://www.youtube.com/embed/auwiJlu8c7Y",
+                "item5" => "https://www.youtube.com/embed/lCeP3JXYvQA",
+                "item6" => "https://www.youtube.com/embed/t0esK6WzVE4",
+                // ...
+            );
+            */
+            ?>
             <div class="grid-container-3 w-full mx-2">
-                <div class="item1">A</div>
-                <div class="item2">B</div>
-                <div class="item3">C</div>
-                <div class="item4">D</div>
-                <div class="item5">E</div>
-                <div class="item6">F</div>
+                <div class="item1" id="item1">
+                    <!-- Aquí se mostrará el video -->
+                    <div class="flex h-full" style="flex-direction:column;">
+                        <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/Xao20KgGzVU" frameborder="0" allowfullscreen></iframe>
+                        <p>Titulo</p>
+                    </div>
+                </div>
+                <?php if (!empty($videos)) {
+                    foreach ($videos['items'] as $index => $video) {
+                        // Accede a las miniaturas del video
+                        $thumbnails = $video['snippet']['thumbnails'];
+                        // Obtén la URL de la miniatura por defecto (medium)
+                        $thumbnail_url = $thumbnails['medium']['url'];
+                ?>
+                        <div class="<?php echo ('item' . $index + 1) ?>">
+                            <div class="flex items-center gap-3">
+                                <img style="width:135px; height:95px;" src="<?php echo $thumbnail_url; ?>">
+                                <p><?php echo $video['snippet']['title']; ?></p>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
+
             </div>
+
+
 
         </div>
     </div>
 </div>
+
+
+
 
 <style>
     iframe {
@@ -417,9 +437,6 @@ $videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/s
         justify-content: center;
         align-items: center;
     }
-
-
-
 
     .swiper {
         width: 100%;
@@ -464,6 +481,14 @@ $videos = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/s
 
 
 <script>
+    function replaceVideo(videoUrl, videoId) {
+        var videoPlayer = document.getElementById('videoPlayer');
+
+        if (videoPlayer) {
+            videoPlayer.src = videoUrl;
+        }
+    }
+
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         spaceBetween: 10,

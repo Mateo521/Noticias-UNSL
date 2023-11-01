@@ -16,8 +16,6 @@ function linksnoticias_unsl_estilos()
     wp_enqueue_style('unsl_estilo-style', get_template_directory_uri() . "/style.css", array('unsl_estilo-flowbite'), $version, 'all');
     wp_enqueue_style('unsl_estilo-flowbite', "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css", array(), '1.8.0', 'all');
     wp_enqueue_style('unsl_estilo-swiper', "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css", array(), '1.8.1', 'all');
-
-    
 }
 
 add_action('wp_enqueue_scripts', 'linksnoticias_unsl_estilos');
@@ -33,14 +31,46 @@ function linksnoticias_unsl_scripts()
     wp_enqueue_script('unsl_estilo-jquery', "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js", array(), '3.6.4', false);
 
     wp_enqueue_script('unsl_estilo-swiper', "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js", array(), '3.6.4', false);
-
- 
 }
 
 add_action('wp_enqueue_scripts', 'linksnoticias_unsl_scripts');
 
-function my_function_admin_bar(){ return false; }
-add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+function my_function_admin_bar()
+{
+    return false;
+}
+add_filter('show_admin_bar', 'my_function_admin_bar');
+
+
+
+
+//$videos = json_decode(file_get_contents());
+
+function obtener_videos_de_youtube() {
+    $cached_results = get_transient('youtube_api_cache');
+    if ($cached_results) {
+        return $cached_results;
+    } else {
+       // $key = "AIzaSyCLEonsCv5imHZdQStrKrBUyINIr27f2jg";
+        $key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
+        $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
+        $max = '5';
+        $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
+   
+        $api_url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . '&playlistId=' . $playlistid . '';
+        $response = wp_remote_get($api_url);
+
+        if (is_wp_error($response)) {
+            return array(); // Manejar errores de solicitud
+        }
+
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true);
+        set_transient('youtube_api_cache', $data, 60 * 60);
+
+        return $data;
+    }
+}
 
 
 ?>

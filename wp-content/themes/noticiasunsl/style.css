@@ -7,7 +7,7 @@ Description:Pagina personalizada para Noticias UNSL por el Matu
 Requires at least: 6.1
 Tested up to: 6.3
 Requires PHP: 5.6
-Version: 0.898
+Version: 0.91
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: Radio Universidad
@@ -74,8 +74,31 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     gap: 0 5px;
   padding: 10px;
 }
+
+
+.grid-container-3 {
+  gap:10px;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: repeat(5,1fr);
+  display: grid;
+  grid-template-areas:
+  'a a b'
+  'a a c'
+  'a a d'
+  'a a e'
+  'a a f';
+}
 .header-m{height:108px;}
 @media screen and (max-width:980px){
+
+  .grid-container-3{
+  display:flex;
+  flex-direction:column;
+  }
+.item1{
+ height:350px;
+}
+
   .grid-container-2 { gap : 10px;
   }
   .item7 {border:solid var(--container-bd-color) 1px;
@@ -104,6 +127,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
         'f f';
     }
 }
+
+
 @media screen and (max-width:550px){
 
   .grid-container-2 {
@@ -134,16 +159,4 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 }
 
 
-
-.grid-container-3 {
-
-
-  display: grid;
-  grid-template-areas:
-  'a a a b'
-  'a a a c'
-  'a a a d'
-  'a a a e'
-  'a a a f';
-}
 
