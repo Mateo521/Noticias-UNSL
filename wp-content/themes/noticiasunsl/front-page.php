@@ -7,20 +7,20 @@ get_header();
 <div class="swiper mySwiper4">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale);">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
 
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=2);">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=2); background-size:cover;">
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=3);">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=3);background-size:cover;">
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=4);">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=4);background-size:cover;">
             </div>
         </div>
     </div>
@@ -467,7 +467,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-            delay: 2500,
+            delay: 9000,
             disableOnInteraction: false
         },
         pagination: {

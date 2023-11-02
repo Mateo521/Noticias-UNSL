@@ -33,6 +33,8 @@ function linksnoticias_unsl_scripts()
     wp_enqueue_script('unsl_estilo-fontawesome', "https://kit.fontawesome.com/19e7896a5a.js", array(), '1.0', false);
 
     wp_enqueue_script('unsl_estilo-jquery', "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js", array(), '3.6.4', false);
+    wp_enqueue_script('unsl_estilo-flowbite', "https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js", array(), '3.6.4', false);
+   
 
     wp_enqueue_script('unsl_estilo-swiper', "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js", array(), '3.6.4', false);
 }
@@ -55,7 +57,8 @@ function obtener_videos_de_youtube() {
     if ($cached_results) {
         return $cached_results;
     } else {
-  
+       
+        $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '4';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
    
