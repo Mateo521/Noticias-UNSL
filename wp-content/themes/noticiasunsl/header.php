@@ -7,6 +7,7 @@
   <meta name="description" content="Pendiente">
   <title>Noticias UNSL</title>
   <link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/72x72.png">
+
   <?php
   wp_head();
   ?>

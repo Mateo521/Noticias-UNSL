@@ -3,85 +3,37 @@ get_header();
 ?>
 
 
+<!-- Swiper -->
+<div class="swiper mySwiper4">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale);">
 
-
-
-<div id="default-carousel" class="relative w-full" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden md:h-96">
-        <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-
-
-            <img src="https://picsum.photos/1200/700.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            <div class="flex justify-center">
-                <div class="flex justify-center absolute bottom-0 text-white text-center" style="padding:45px;">
-                    <div style="z-index:3;">
-                        <h5 class="text-center">UNSL</h5>
-                        <p class="md:text-4xl">Fernando Tauber recibió el título Doctor Honoris Causa de la UNDAV</p>
-                    </div>
-                </div>
-
-                <div class="absolute bottom-0 w-full h-96" style="background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%); ">
-
-
-                </div>
             </div>
-
         </div>
-        <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-
-
-            <img src="https://picsum.photos/1200/700.jpg?page=2" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            <div class="flex justify-center">
-                <div class="flex justify-center absolute bottom-0 text-white text-center" style="padding:45px;">
-                    <div style="z-index:3;">
-                        <h5 class="text-center">UNSL 2</h5>
-                        <p class="md:text-4xl">Fernando Tauber recibió el título Doctor Honoris Causa de la UNDAV</p>
-                    </div>
-                </div>
-
-                <div class="absolute bottom-0 w-full h-96" style="background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%); ">
-                </div>
+        <div class="swiper-slide">
+            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=2);">
             </div>
-
+        </div>
+        <div class="swiper-slide">
+            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=3);">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="max-screen-2xl w-full h-80" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=4);">
+            </div>
         </div>
     </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-
-        <!--
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
--->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="autoplay-progress">
+        <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span></span>
     </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
 </div>
-
-
-
 
 
 
@@ -186,7 +138,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
             </div>
 
 
-
+            <!--
 
             <div class="grid-container-2 w-full mx-2 text-white">
                 <div class="item7 p-2">
@@ -225,7 +177,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                     </div>
                 </div>
             </div>
-
+-->
         </div>
     </div>
 </div>
@@ -293,31 +245,31 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
 
-                        <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=1" />
+                        <div class="flex flex-col items-center p-10">
+                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=1" />
 
-                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                            <p class="py-5">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=2" />
+                        <div class="flex flex-col items-center p-10">
+                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=2" />
 
-                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                            <p class="py-5">Titulo 2</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=3" />
+                        <div class="flex flex-col items-center p-10">
+                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=3" />
 
-                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                            <p class="py-5">Titulo 3</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="grid md:grid-cols-2 items-center">
-                            <img class="w-full" style="padding:0 50px;" src="https://picsum.photos/1100/700.jpg?page=4" />
+                        <div class="flex flex-col items-center p-10">
+                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=4" />
 
-                            <p style="padding: 0 50px;">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+                            <p class="py-5">Titulo 4</p>
                         </div>
                     </div>
                 </div>
@@ -327,8 +279,9 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
                 <div class="swiper-pagination"></div>
             </div>
-
-
+            <!--
+            <p class="text-2xl">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
+            -->
             <div thumbsSlider="" class="swiper mySwiper  ">
 
                 <div class="swiper-wrapper">
@@ -353,7 +306,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
             <!--  <iframe class="w-full h-full" src="https://www.youtube.com/embed/oHg5SJYRHA0" title="RickRoll&#39;D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               -->
-            <p>AUDIOVISUAL</p>
+
 
             <?php
             $videos = obtener_videos_de_youtube();
@@ -375,49 +328,54 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
     </div>
 </div>
 
-<div class="flex justify-center py-8 text-white">
-    <div class="w-full" style="background-color:#04303c;">
-        <div class="max-w-screen-xl flex flex-wr items-center justify-between mx-auto w-full">
-            <div class="grid-container-3 w-full p-3">
-                <div class="item1" id="item1">
-                    <!-- Aquí se mostrará el primer video de la API -->
-                    <?php if (!empty($videos)) {
-                        // Muestra el primer video de la API
-                        $primer_video = $videos['items'][0];
-                        $thumbnails = $primer_video['snippet']['thumbnails'];
+
+<div class="w-full py-12" style="background-color:#0f2f49;">
+    <div class="flex justify-center  text-white">
+        <div class="max-w-screen-xl w-full">
+            <p class="text-3xl  p-5">AUDIOVISUAL</p>
+            <div class="flex flex-wr items-center justify-between mx-auto ">
+                <div class="grid-container-3 w-full p-3">
+
+                    <div class="item1" id="item1">
+                        <!-- Aquí se mostrará el primer video de la API -->
+                        <?php if (!empty($videos)) {
+                            // Muestra el primer video de la API
+                            $primer_video = $videos['items'][0];
+                            $thumbnails = $primer_video['snippet']['thumbnails'];
+                            $thumbnail_url = $thumbnails['medium']['url'];
+                        ?>
+                            <div class="flex h-full" style="flex-direction:column;">
+                                <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $primer_video['id']['videoId']; ?>" frameborder="0" allowfullscreen></iframe>
+                                <!--    <p class="text-xl py-5"><?php echo $primer_video['snippet']['title']; ?></p> -->
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <?php
+                    for ($index = 0; $index < count($videos['items']) - 1; $index++) {
+                        $video = $videos['items'][$index];
+                        $thumbnails = $video['snippet']['thumbnails'];
                         $thumbnail_url = $thumbnails['medium']['url'];
                     ?>
-                        <div class="flex h-full" style="flex-direction:column;">
-                            <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $primer_video['id']['videoId']; ?>" frameborder="0" allowfullscreen></iframe>
-                        <!--    <p class="text-xl py-5"><?php echo $primer_video['snippet']['title']; ?></p> -->
+                        <!-- Contenido de la miniatura -->
+                        <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['id']['videoId']; ?>">
+                            <div class="grid items-center gap-3 grid-cols-2">
+                                <div class="relative w-full h-full">
+
+                                    <img class="absolute" style="left:50%;top:50%; transform:translate(-50%,-50%)" width="35" height="35" src="<?php echo get_template_directory_uri(); ?>/assets/images/pngegg.png" alt="">
+
+                                    <img class="w-full h-full" src="<?php echo $thumbnail_url; ?>">
+                                </div>
+
+
+                                <p class="text"><?php echo $video['snippet']['title']; ?></p>
+                            </div>
                         </div>
                     <?php
                     }
                     ?>
                 </div>
-                <?php
-                for ($index = 0; $index < count($videos['items']) - 1; $index++) {
-                    $video = $videos['items'][$index];
-                    $thumbnails = $video['snippet']['thumbnails'];
-                    $thumbnail_url = $thumbnails['medium']['url'];
-                ?>
-                    <!-- Contenido de la miniatura -->
-                    <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['id']['videoId']; ?>">
-                        <div class="grid items-center gap-3 grid-cols-2">
-                            <div class="relative w-full h-full">
-                              
-                                    <img class="absolute" style="left:50%;top:50%; transform:translate(-50%,-50%)" width="35" height="35" src="<?php echo get_template_directory_uri(); ?>/assets/images/pngegg.png" alt="">
-                              
-                                <img class="w-full h-full" src="<?php echo $thumbnail_url; ?>">
-                            </div>
-
-
-                            <p class="text"><?php echo $video['snippet']['title']; ?></p>
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
             </div>
         </div>
     </div>
@@ -435,11 +393,11 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
         color: black;
     }
 
-    
+
     .swiper-pagination,
     .swiper-pagination-current span {
-      position:relative;
-      padding:10px;
+        position: relative;
+        padding: 10px;
     }
 
     .swiper {
@@ -503,6 +461,31 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 
 <script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+    var swiper = new Swiper(".mySwiper4", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
+        }
+    });
+
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         spaceBetween: 10,
