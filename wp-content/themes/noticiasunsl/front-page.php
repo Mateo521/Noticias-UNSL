@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<script src="https://cdn.tailwindcss.com"></script>
+
 
 <!-- Swiper -->
 <div class="swiper mySwiper4">
@@ -437,6 +437,30 @@ $videos = obtener_videos_de_youtube();
               -->
 
 
+
+
+
+            <div class="grid grid-container-4 w-full text-white" style="background-color: #172f3b;">
+                <div class="item1 p-5">
+
+                    <img class="w-full" src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Service_mark.svg" alt="">
+                    <p>Ciencia</p>
+                    <p>Tecnología</p>
+                    <p>Salud</p>
+                    <p>Ambiente</p>
+                </div>
+                <div class="item2 p-5">
+                    <img class="w-full" src="https://picsum.photos/1100/700.jpg?page=3" alt="">
+                    <span style="text-transform:uppercase; color:aliceblue;">Gabriel Rabinovich recibe el Premio Konex de Brillante</span>
+                    <h2 class="text-2xl">"La ciencia argentina tiene talento humano para iluminar al mundo"</h2>
+                    <p>El bióquímico e investigador de Conicet, reconocido nacional e internacionalmente, defendió la necesidad de hacer ciencia básica, al asegurar que en la Argentina "hacer tecnologías asociadas a descubrimientos de países centrales" sino que hay "potencia para desarrollar cosas nuevas".</p>
+                </div>
+                <div class="item3 p-5">
+                    <img class="w-full" src="https://www.telam.com.ar/thumbs/bluesteel/advf/imagenes/2023/10/6540e770a92a0_655.jpg" alt="">
+
+
+                </div>
+            </div>
 
 
 
