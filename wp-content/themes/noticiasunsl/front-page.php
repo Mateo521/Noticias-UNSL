@@ -1,26 +1,65 @@
 <?php
 get_header();
 ?>
-
+<script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Swiper -->
 <div class="swiper mySwiper4">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
+                    <div class="text-white p-12 z-10" style="z-index: 1;">
+                        <p>INSTITUCIONAL</p>
+                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
+                    </div>
 
+                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=2); background-size:cover;">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
+                    <div class="text-white p-12 z-10" style="z-index: 1;">
+                        <p>INSTITUCIONAL</p>
+                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
+                    </div>
+
+                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=3);background-size:cover;">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
+                    <div class="text-white p-12 z-10" style="z-index: 1;">
+                        <p>INSTITUCIONAL</p>
+                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
+                    </div>
+
+                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=4);background-size:cover;">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
+                    <div class="text-white p-12 z-10" style="z-index: 1;">
+                        <p>INSTITUCIONAL</p>
+                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
+                    </div>
+
+                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -443,7 +482,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
     .mySwiper .swiper-slide {
         width: 25%;
-        height: 200px;
+        //   height: 200px;
         opacity: 0.4;
     }
 

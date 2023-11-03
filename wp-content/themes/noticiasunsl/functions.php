@@ -57,9 +57,9 @@ function obtener_videos_de_youtube() {
     if ($cached_results) {
         return $cached_results;
     } else {
-       
+     
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
-        $max = '4';
+        $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
    
         $api_url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . '&playlistId=' . $playlistid . '';
