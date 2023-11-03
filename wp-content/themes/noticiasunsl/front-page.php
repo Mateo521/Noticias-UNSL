@@ -21,7 +21,7 @@ get_header();
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=2);background-size:cover;">
                 <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
                     <div class="text-white p-12 z-10" style="z-index: 1;">
                         <p>INSTITUCIONAL</p>
@@ -35,7 +35,7 @@ get_header();
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=3);background-size:cover;">
                 <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
                     <div class="text-white p-12 z-10" style="z-index: 1;">
                         <p>INSTITUCIONAL</p>
@@ -49,7 +49,7 @@ get_header();
             </div>
         </div>
         <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
+            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=4);background-size:cover;">
                 <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
                     <div class="text-white p-12 z-10" style="z-index: 1;">
                         <p>INSTITUCIONAL</p>
@@ -177,46 +177,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
             </div>
 
 
-            <!--
 
-            <div class="grid-container-2 w-full mx-2 text-white">
-                <div class="item7 p-2">
-                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=9" alt="">
-                    <div>
-                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
-                        <p>Cuanto influye la suerte para tener una carrera profesional exitosa</p>
-                    </div>
-                </div>
-                <div class="item8 p-2">
-                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=10" alt="">
-                    <div>
-                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
-                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
-                    </div>
-                </div>
-                <div class="item9 p-2">
-                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=11" alt="">
-                    <div>
-                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
-                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
-                    </div>
-                </div>
-                <div class="item10 p-2">
-                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=12" alt="">
-                    <div>
-                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
-                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
-                    </div>
-                </div>
-                <div class="item11 p-2">
-                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=13" alt="">
-                    <div>
-                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
-                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
-                    </div>
-                </div>
-            </div>
--->
         </div>
     </div>
 </div>
@@ -238,6 +199,12 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
         <p class="md:text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
     </div>
 </div>
+
+
+
+
+
+
 
 
 <!--
@@ -277,6 +244,129 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
         </div>
     </div>
 </div> -->
+
+
+<?php
+$videos = obtener_videos_de_youtube();
+/*
+            $videos = array(
+                "item2" => "https://www.youtube.com/embed/Xao20KgGzVU",
+                "item3" => "https://www.youtube.com/embed/wXnJArjhW1M",
+                "item4" => "https://www.youtube.com/embed/auwiJlu8c7Y",
+                "item5" => "https://www.youtube.com/embed/lCeP3JXYvQA",
+                "item6" => "https://www.youtube.com/embed/t0esK6WzVE4",
+                // ...
+            );
+            */
+?>
+
+
+
+
+
+
+<div class="flex justify-center py-8">
+    <div class="w-full">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
+            <div class="grid-container-2 w-full mx-2 text-white">
+                <div class="item7 p-2">
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=9" alt="">
+                    <div>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
+                        <p>Cuanto influye la suerte para tener una carrera profesional exitosa</p>
+                    </div>
+                </div>
+                <div class="item8 p-2">
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=10" alt="">
+                    <div>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item9 p-2">
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=11" alt="">
+                    <div>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item10 p-2">
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=12" alt="">
+                    <div>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+                <div class="item11 p-2">
+                    <img class="w-full" src="https://picsum.photos/1200/700.jpg?page=13" alt="">
+                    <div>
+                        <h2 class="text-2xl title-c">Lo destaca Warren Buffet.</h2>
+                        <p>Preocupan resultados de estudios sobre resistencia a los antimicrobianos</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="w-full py-12" style="background-color:#0f2f49;">
+    <div class="flex justify-center  text-white">
+        <div class="max-w-screen-xl w-full">
+            <p class="text-3xl  p-5">AUDIOVISUAL</p>
+            <div class="flex flex-wr items-center justify-between mx-auto ">
+                <div class="grid-container-3 w-full p-3">
+
+                    <div class="item1" id="item1">
+                        <!-- Aquí se mostrará el primer video de la API -->
+                        <?php if (!empty($videos)) {
+                            // Muestra el primer video de la API
+                            $primer_video = $videos['items'][0];
+                            $thumbnails = $primer_video['snippet']['thumbnails'];
+                            $thumbnail_url = $thumbnails['medium']['url'];
+                        ?>
+                            <div class="flex h-full" style="flex-direction:column;">
+                                <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $primer_video['id']['videoId']; ?>" frameborder="0" allowfullscreen></iframe>
+                                <!--    <p class="text-xl py-5"><?php echo $primer_video['snippet']['title']; ?></p> -->
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <?php
+                    for ($index = 0; $index < count($videos['items']) - 1; $index++) {
+                        $video = $videos['items'][$index];
+                        $thumbnails = $video['snippet']['thumbnails'];
+                        $thumbnail_url = $thumbnails['medium']['url'];
+                    ?>
+                        <!-- Contenido de la miniatura -->
+                        <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['id']['videoId']; ?>">
+                            <div class="grid items-center gap-3 grid-cols-2">
+                                <div class="relative w-full h-full">
+
+                                    <img class="absolute" style="left:50%;top:50%; transform:translate(-50%,-50%)" width="35" height="35" src="<?php echo get_template_directory_uri(); ?>/assets/images/pngegg.png" alt="">
+
+                                    <img class="w-full h-full" src="<?php echo $thumbnail_url; ?>">
+                                </div>
+
+
+                                <p class="text"><?php echo $video['snippet']['title']; ?></p>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
@@ -347,80 +437,13 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
               -->
 
 
-            <?php
-            $videos = obtener_videos_de_youtube();
-            /*
-            $videos = array(
-                "item2" => "https://www.youtube.com/embed/Xao20KgGzVU",
-                "item3" => "https://www.youtube.com/embed/wXnJArjhW1M",
-                "item4" => "https://www.youtube.com/embed/auwiJlu8c7Y",
-                "item5" => "https://www.youtube.com/embed/lCeP3JXYvQA",
-                "item6" => "https://www.youtube.com/embed/t0esK6WzVE4",
-                // ...
-            );
-            */
-            ?>
+
 
 
 
         </div>
     </div>
 </div>
-
-
-<div class="w-full py-12" style="background-color:#0f2f49;">
-    <div class="flex justify-center  text-white">
-        <div class="max-w-screen-xl w-full">
-            <p class="text-3xl  p-5">AUDIOVISUAL</p>
-            <div class="flex flex-wr items-center justify-between mx-auto ">
-                <div class="grid-container-3 w-full p-3">
-
-                    <div class="item1" id="item1">
-                        <!-- Aquí se mostrará el primer video de la API -->
-                        <?php if (!empty($videos)) {
-                            // Muestra el primer video de la API
-                            $primer_video = $videos['items'][0];
-                            $thumbnails = $primer_video['snippet']['thumbnails'];
-                            $thumbnail_url = $thumbnails['medium']['url'];
-                        ?>
-                            <div class="flex h-full" style="flex-direction:column;">
-                                <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $primer_video['id']['videoId']; ?>" frameborder="0" allowfullscreen></iframe>
-                                <!--    <p class="text-xl py-5"><?php echo $primer_video['snippet']['title']; ?></p> -->
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-                    <?php
-                    for ($index = 0; $index < count($videos['items']) - 1; $index++) {
-                        $video = $videos['items'][$index];
-                        $thumbnails = $video['snippet']['thumbnails'];
-                        $thumbnail_url = $thumbnails['medium']['url'];
-                    ?>
-                        <!-- Contenido de la miniatura -->
-                        <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['id']['videoId']; ?>">
-                            <div class="grid items-center gap-3 grid-cols-2">
-                                <div class="relative w-full h-full">
-
-                                    <img class="absolute" style="left:50%;top:50%; transform:translate(-50%,-50%)" width="35" height="35" src="<?php echo get_template_directory_uri(); ?>/assets/images/pngegg.png" alt="">
-
-                                    <img class="w-full h-full" src="<?php echo $thumbnail_url; ?>">
-                                </div>
-
-
-                                <p class="text"><?php echo $video['snippet']['title']; ?></p>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 <style>
     iframe {
