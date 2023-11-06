@@ -199,10 +199,6 @@ endif;
         </div>
 
 
-
-
-
-
         <div id="basic">
             <a href="#" title="image1" rel="lightbox">
                 <img src="#" style="max-width: 150px; max-height: 150px;">
@@ -218,14 +214,14 @@ endif;
         <script>
             $('#basic').simpleLightbox();
         </script>
-
+<!--
         <h1>Iframe</h1>
         <div id="iframe">
             <a href="test/assets/iframe1.html" title="iframe1" rel="lightbox">iframe1</a>
             <a href="test/assets/iframe2.html" title="iframe2" rel="lightbox">iframe2</a>
             <a href="test/assets/iframe3.html" title="iframe3" rel="lightbox">iframe3</a>
         </div>
-
+-->
         <script>
             function tipografia() {
                 document.body.classList.toggle("tipog");

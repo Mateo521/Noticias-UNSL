@@ -77,30 +77,27 @@ function obtener_videos_de_youtube() {
         return $data;
     }
 }
-
-
 function custom_gallery_output($content) {
     // Busca galerías de imágenes con la clase "wp-block-gallery"
-    preg_match_all('/<div class="wp-block-gallery([^>]*)>(.*?)<\/div>/s', $content, $matches, PREG_SET_ORDER);
+    preg_match_all('/<figure class="wp-block-gallery([^>]*)>(.*?)<\/figure>/s', $content, $matches, PREG_SET_ORDER);
 
     if (!empty($matches)) {
         foreach ($matches as $gallery) {
             // Extrae las imágenes de la galería
-            preg_match_all('/<a href="([^"]+)"[^>]*>\s*<img src="([^"]+)"[^>]*>\s*<\/a>/', $gallery[2], $images, PREG_SET_ORDER);
+            preg_match_all('/<img style="width: 100%;" src="([^"]+)"[^>]*>/', $gallery[2], $images, PREG_SET_ORDER);
 
-            // Si se encontraron imágenes, crea el div personalizado
+            // Si se encontraron imágenes, crea el div personalizado solo para la galería
             if (!empty($images)) {
                 $output = '<div id="basic">';
                 foreach ($images as $index => $image) {
                     $image_src = esc_url($image[1]);
-                    $thumbnail_src = esc_url($image[2]);
                     $output .= '<a href="' . $image_src . '" title="image' . ($index + 1) . '" rel="lightbox">';
-                    $output .= '<img src="' . $thumbnail_src . '" style="max-width: 150px; max-height: 150px;">';
+                    $output .= '<img src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
                     $output .= '</a>';
                 }
                 $output .= '</div>';
 
-                // Reemplaza la galería original con el div personalizado
+                // Reemplaza solo la galería original con el div personalizado
                 $content = str_replace($gallery[0], $output, $content);
             }
         }
@@ -110,6 +107,10 @@ function custom_gallery_output($content) {
 }
 
 add_filter('the_content', 'custom_gallery_output');
+
+
+
+
 
 
 
