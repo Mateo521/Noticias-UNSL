@@ -58,8 +58,7 @@ function obtener_videos_de_youtube() {
     if ($cached_results) {
         return $cached_results;
     } else {
-       // $key = "AIzaSyCLEonsCv5imHZdQStrKrBUyINIr27f2jg";
-        $key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
+ 
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
@@ -78,6 +77,40 @@ function obtener_videos_de_youtube() {
         return $data;
     }
 }
+
+
+function custom_gallery_output($content) {
+    // Busca galerías de imágenes con la clase "wp-block-gallery"
+    preg_match_all('/<div class="wp-block-gallery([^>]*)>(.*?)<\/div>/s', $content, $matches, PREG_SET_ORDER);
+
+    if (!empty($matches)) {
+        foreach ($matches as $gallery) {
+            // Extrae las imágenes de la galería
+            preg_match_all('/<a href="([^"]+)"[^>]*>\s*<img src="([^"]+)"[^>]*>\s*<\/a>/', $gallery[2], $images, PREG_SET_ORDER);
+
+            // Si se encontraron imágenes, crea el div personalizado
+            if (!empty($images)) {
+                $output = '<div id="basic">';
+                foreach ($images as $index => $image) {
+                    $image_src = esc_url($image[1]);
+                    $thumbnail_src = esc_url($image[2]);
+                    $output .= '<a href="' . $image_src . '" title="image' . ($index + 1) . '" rel="lightbox">';
+                    $output .= '<img src="' . $thumbnail_src . '" style="max-width: 150px; max-height: 150px;">';
+                    $output .= '</a>';
+                }
+                $output .= '</div>';
+
+                // Reemplaza la galería original con el div personalizado
+                $content = str_replace($gallery[0], $output, $content);
+            }
+        }
+    }
+
+    return $content;
+}
+
+add_filter('the_content', 'custom_gallery_output');
+
 
 
 ?>
