@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="dist/jquery-simple-lightbox.js"></script>
+</head>
+<body>
+  <div id="basic">
+    <a href="test/assets/1920x1080.png" title="image1" rel="lightbox">
+      <img src="test/assets/1920x1080.png" style="max-width: 150px; max-height: 150px;">
+    </a>
+    <a href="test/assets/1080x1920.png" title="image2" rel="lightbox">
+      <img src="test/assets/1080x1920.png" style="max-width: 150px; max-height: 150px;">
+    </a>
+    <a href="test/assets/640x480.png" title="image3" rel="lightbox">
+      <img src="test/assets/640x480.png" style="max-width: 150px; max-height: 150px;">
+    </a>
+  </div>
+  <script>
+  $('#basic').simpleLightbox({
+    owner: window.parent.document.body
+  });
+  </script>
+</body>
+</html>

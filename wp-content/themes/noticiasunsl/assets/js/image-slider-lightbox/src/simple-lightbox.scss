@@ -1,0 +1,170 @@
+$NAMESPACE: simple-lightbox;
+
+.#{$NAMESPACE} {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  overflow: none;
+
+  &-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #ddd;
+  }
+
+  &-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    width: 100%;
+    height: 1.7em;
+    line-height: 1.75em;
+    padding: 2px;
+    background-color: #000;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0.5;
+
+    .#{$NAMESPACE}-hovering & {
+      visibility: visible;
+    }
+  }
+  
+  &-page {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 5em;
+    margin-left: 0.5em;
+  }
+  &-caption {
+    margin: 0 100px;
+    text-align: center;
+  }
+
+  &-tools {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    text-align: right;
+  }
+  &-zoom,
+  &-window,
+  &-close {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 1.7em;
+    cursor: pointer;
+    &:hover {
+      background-color: #555;
+      color: #fff;
+    }
+  }
+  &-zoom {
+    &:after {
+      content: '+';
+    }
+    .#{$NAMESPACE}-zooming &:after {
+      content: '−';
+    }
+  }
+  &-window {
+    &:after {
+      content: '⤤';
+    }
+  }
+  &-close {
+    margin-right: 10px;
+    &:after {
+      content: '×';
+    }
+  }
+
+  &-prev,
+  &-next {
+    position: absolute;
+    top: calc(50% - 1em);
+    z-index: 150;
+    width: 1.7em;
+    line-height: 1.7em;
+    background-color: #000;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: #555;
+      color: #fff;
+    }
+    .#{$NAMESPACE}-hovering & {
+      visibility: visible;
+    }
+  }
+  &-prev {
+    left: 10px;
+    &:after {
+      content: '<';
+    }
+  }
+  &-next {
+    right: 10px;
+    &:after {
+      content: '>';
+    }
+  }
+
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    z-index: 120;
+    background-color: #333;
+
+    .#{$NAMESPACE}-zooming & {
+      width: 100%;
+      height: 100%;
+    }
+
+    > * {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: auto;
+      height: auto;
+      z-index: 130;
+    }
+  }
+
+  &-loading {
+    width: 100%;
+    height: 1em;
+    text-align: center;
+    color: #888;
+    z-index: 125;
+
+    &:after {
+      content: 'NOW LOADING...';
+    }
+  }
+
+  &-disable-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+}

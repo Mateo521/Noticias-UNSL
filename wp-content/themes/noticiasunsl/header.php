@@ -13,7 +13,7 @@
   ?>
 </head>
 
-<body>
+<body id="fuente">
 
 
   <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full" style="z-index: 100;">
