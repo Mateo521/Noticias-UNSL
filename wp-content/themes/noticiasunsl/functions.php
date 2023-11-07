@@ -60,7 +60,6 @@ function obtener_videos_de_youtube()
         return $cached_results;
     } else {
 
-      
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
@@ -79,24 +78,24 @@ function obtener_videos_de_youtube()
         return $data;
     }
 }
+
+
+
 function custom_gallery_output($content) {
+
+   // echo $content;
     // Busca todas las galerías "wp-block-gallery"
-    preg_match_all('/<figure class="wp-block-gallery[^>]*>(.*?)<\/figure>/s', $content, $matches, PREG_SET_ORDER);
+    preg_match_all('/<figure class="wp-block-gallery[^>]*>(.*?)<\/figure>/s', $content, $galleries, PREG_SET_ORDER);
 
-    if (!empty($matches)) {
+    if (!empty($galleries)) {
         echo '<div class="flex gap-5 flex-wrap py-5" id="basic">';
-        foreach ($matches as $gallery) {
+        foreach ($galleries as $gallery) {
             // Busca todas las imágenes dentro de la galería
-           preg_match_all('/<figure class="wp-block-image [^>]*><img[^>]+src="([^"]+)"[^>]*>/', $gallery[1], $images, PREG_SET_ORDER);           
-            // preg_match_all('/<figure class="wp-block-image [^>]*><img src="([^"]+)"[^>]*><\/figure>/', $gallery[1], $images, PREG_SET_ORDER);
+            preg_match_all('/<figure class="wp-block-image size-large[^>]*><img[^>]+src="([^"]+)"[^>]*>/', $gallery[1], $images);
 
-            foreach ($images as $image) {
-                $image_src = esc_url($image[1]);
-                
-                // Busca el contenido de <figcaption class="wp-element-caption"></figcaption>
-                preg_match('/<figcaption class="wp-element-caption">([^<]+)<\/figcaption>/', $gallery[1], $caption);
-
-                $title = !empty($caption) ? $caption[1] : 'image';
+            foreach ($images[1] as $image) {
+                $image_src = esc_url($image);
+                $title = 'image';
 
                 echo '<a href="' . $image_src . '" title="' . $title . '" rel="lightbox">';
                 echo '<img class="w-full h-full" src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
@@ -108,4 +107,14 @@ function custom_gallery_output($content) {
 
     return $content;
 }
+
+add_filter('the_content', 'custom_gallery_output');
+
+
+
+
+
+
+
+
 ?>

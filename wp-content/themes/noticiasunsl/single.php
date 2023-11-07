@@ -188,8 +188,12 @@ endif;
         // Muestra el contenido combinado
         echo '<div class="combined-content">' . $combined_content . '</div>';
         ?>
+<p>Galería</p>
+<?php $content = get_the_content();
+$content = apply_filters('the_content', $content);
 
-<?php $content = custom_gallery_output($content); ?>
+
+?>
 
         <!-- PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
         <div class="flex items-center gap-3">
