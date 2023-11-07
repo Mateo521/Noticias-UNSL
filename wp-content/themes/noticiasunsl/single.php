@@ -201,38 +201,7 @@ endif;
 
         <h1>Image</h1>
 
-        <?php
-        // Obtén el contenido de la entrada actual
-        $content = get_the_content();
-
-        // Busca todas las galerías de imágenes con la clase "wp-block-gallery"
-        preg_match_all('/<figure class="wp-block-gallery[^>]*>(.*?)<\/figure>/s', $content, $matches, PREG_SET_ORDER);
-
-        if (!empty($matches)) {
-            foreach ($matches as $gallery) {
-                // Busca todas las imágenes dentro del galería
-                preg_match_all('/<figure class="wp-block-image size-large[^>]*><img[^>]+src="([^"]+)"[^>]*>/', $gallery[1], $images, PREG_SET_ORDER);
-
-                if (!empty($images)) {
-                    echo '<div id="basic">';
-                    foreach ($images as $index => $image) {
-
-
-
-                        $image_src = esc_url($image[1]);
-                        $title = 'image' . ($index + 1);
-
-                        echo '<a href="' . $image_src . '" title="' . $title . '" rel="lightbox">';
-                        echo '<img src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
-                        echo '</a>';
-                    }
-                    echo '</div>';
-                }
-            }
-        }
-
-        ?>
-
+       <?php $content = custom_gallery_output($content); ?>
 
         <script>
             $('#basic').simpleLightbox();

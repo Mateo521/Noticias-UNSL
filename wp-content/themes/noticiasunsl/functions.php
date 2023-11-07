@@ -60,7 +60,8 @@ function obtener_videos_de_youtube()
         return $cached_results;
     } else {
 
-
+        // $key = "AIzaSyCLEonsCv5imHZdQStrKrBUyINIr27f2jg";
+        $key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
@@ -79,40 +80,32 @@ function obtener_videos_de_youtube()
         return $data;
     }
 }
-function custom_gallery_output($content)
-{
-    // Busca galerías de imágenes con la clase "wp-block-gallery"
-    preg_match_all('/<figure class="wp-block-gallery([^>]*)>(.*?)<\/figure>/s', $content, $matches, PREG_SET_ORDER);
+function custom_gallery_output($content) {
+    // Busca todas las galerías "wp-block-gallery"
+    preg_match_all('/<figure class="wp-block-gallery[^>]*>(.*?)<\/figure>/s', $content, $matches, PREG_SET_ORDER);
 
     if (!empty($matches)) {
+        echo '<div id="basic">';
         foreach ($matches as $gallery) {
-            // Extrae las imágenes de la galería
-            preg_match_all('/<img style="width: 100%;" src="([^"]+)"[^>]*>/', $gallery[2], $images, PREG_SET_ORDER);
+            // Busca todas las imágenes dentro de la galería
+            preg_match_all('/<figure class="wp-block-image size-large[^>]*><img[^>]+src="([^"]+)"[^>]*>/', $gallery[1], $images, PREG_SET_ORDER);
 
-            // Si se encontraron imágenes, crea el div personalizado solo para la galería
-            if (!empty($images)) {
-                $output = '<div id="basic">';
-                foreach ($images as $index => $image) {
-                    $image_src = esc_url($image[1]);
-                    $output .= '<a href="' . $image_src . '" title="image' . ($index + 1) . '" rel="lightbox">';
-                    $output .= '<img src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
-                    $output .= '</a>';
-                }
-                $output .= '</div>';
+            foreach ($images as $image) {
+                $image_src = esc_url($image[1]);
+                $title = 'image';
 
-                // Reemplaza solo la galería original con el div personalizado
-                $content = str_replace($gallery[0], $output, $content);
+                echo '<a href="' . $image_src . '" title="' . $title . '" rel="lightbox">';
+                echo '<img src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
+                echo '</a>';
             }
         }
+        echo '</div>';
     }
 
     return $content;
 }
 
 add_filter('the_content', 'custom_gallery_output');
-
-
-
 
 
 
