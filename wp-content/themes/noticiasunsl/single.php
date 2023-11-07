@@ -189,7 +189,7 @@ endif;
         echo '<div class="combined-content">' . $combined_content . '</div>';
         ?>
 
-
+<?php $content = custom_gallery_output($content); ?>
 
         <!-- PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
         <div class="flex items-center gap-3">
@@ -201,7 +201,7 @@ endif;
 
         <h1>Image</h1>
 
-       <?php $content = custom_gallery_output($content); ?>
+     
 
         <script>
             $('#basic').simpleLightbox();

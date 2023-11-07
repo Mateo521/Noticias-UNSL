@@ -60,8 +60,7 @@ function obtener_videos_de_youtube()
         return $cached_results;
     } else {
 
-        // $key = "AIzaSyCLEonsCv5imHZdQStrKrBUyINIr27f2jg";
-        $key = "AIzaSyAvh2BevU2XW1faitCTmmBKzJAaRLMBRY0";
+      
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
@@ -85,17 +84,22 @@ function custom_gallery_output($content) {
     preg_match_all('/<figure class="wp-block-gallery[^>]*>(.*?)<\/figure>/s', $content, $matches, PREG_SET_ORDER);
 
     if (!empty($matches)) {
-        echo '<div id="basic">';
+        echo '<div class="flex gap-5 flex-wrap py-5" id="basic">';
         foreach ($matches as $gallery) {
             // Busca todas las imágenes dentro de la galería
-            preg_match_all('/<figure class="wp-block-image size-large[^>]*><img[^>]+src="([^"]+)"[^>]*>/', $gallery[1], $images, PREG_SET_ORDER);
+           preg_match_all('/<figure class="wp-block-image [^>]*><img[^>]+src="([^"]+)"[^>]*>/', $gallery[1], $images, PREG_SET_ORDER);           
+            // preg_match_all('/<figure class="wp-block-image [^>]*><img src="([^"]+)"[^>]*><\/figure>/', $gallery[1], $images, PREG_SET_ORDER);
 
             foreach ($images as $image) {
                 $image_src = esc_url($image[1]);
-                $title = 'image';
+                
+                // Busca el contenido de <figcaption class="wp-element-caption"></figcaption>
+                preg_match('/<figcaption class="wp-element-caption">([^<]+)<\/figcaption>/', $gallery[1], $caption);
+
+                $title = !empty($caption) ? $caption[1] : 'image';
 
                 echo '<a href="' . $image_src . '" title="' . $title . '" rel="lightbox">';
-                echo '<img src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
+                echo '<img class="w-full h-full" src="' . $image_src . '" style="max-width: 150px; max-height: 150px;">';
                 echo '</a>';
             }
         }
@@ -104,10 +108,4 @@ function custom_gallery_output($content) {
 
     return $content;
 }
-
-add_filter('the_content', 'custom_gallery_output');
-
-
-
-
 ?>
