@@ -4,18 +4,25 @@ if (have_posts()) :
     while (have_posts()) :
         the_post();
 ?>
+
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
             <div class="w-full py-12">
                 <div class="flex justify-center">
-                    <div class="max-w-screen-md w-full">
-                        <header class="entry-header">
-                            <h1 class="text-3xl"><?php the_title(); ?></h1>
+                    <div class="max-w-screen-md w-full  p-3">
+                        <div class="flex items-center gap-3">
+                            <button onclick="tipografia();">Dislexia</button>
+                            <button onclick="blancoynegro();">Blanco y negro</button>
+                            <button onclick="sintesisdevoz();">Síntesis de voz</button>
+                        </div>
+                        <header class="entry-header" id="noticia">
+                            <h1 class="text-4xl"><?php the_title(); ?></h1>
                         </header>
                         <?php
                         the_content();
                         ?>
+
                     </div>
                 </div>
             </div>
@@ -33,18 +40,14 @@ endif;
 
 
 <!-- PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
-<div class="flex items-center gap-3">
-    <button onclick="tipografia();">Dislexia</button>
-    <button onclick="blancoynegro();">Blanco y negro</button>
-    <button onclick="sintesisdevoz();">Síntesis de voz</button>
-</div>
+
 <script>
     function tipografia() {
         document.body.classList.toggle("tipog");
     }
 
     function blancoynegro() {
-        document.body.classList.toggle("grayscale");
+        document.documentElement.classList.toggle("grayscale");
     }
     var buton = true;
 
@@ -76,12 +79,12 @@ endif;
 </script>
 
 <style>
-    body {
+    html {
         transition: filter 1s;
         /* Change "1s" to any time you'd like */
     }
 
-    body.grayscale {
+    html.grayscale {
         /* grayscale(1) makes the website grayscale */
         -webkit-filter: grayscale(1);
         filter: grayscale(1);

@@ -264,7 +264,7 @@ $videos = obtener_videos_de_youtube();
 
 
 
-
+<!--
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
@@ -311,7 +311,7 @@ $videos = obtener_videos_de_youtube();
     </div>
 </div>
 
-
+        -->
 
 
 

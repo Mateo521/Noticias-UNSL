@@ -1,8 +1,5 @@
 <p> Footer </p>
 
-
-
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         //var item1 = document.querySelector("#titulo-miniatura");
