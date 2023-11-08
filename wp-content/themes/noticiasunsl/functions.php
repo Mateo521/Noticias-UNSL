@@ -60,6 +60,7 @@ function obtener_videos_de_youtube()
         return $cached_results;
     } else {
 
+     
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
@@ -80,7 +81,7 @@ function obtener_videos_de_youtube()
 }
 
 
-
+/*
 function custom_gallery_output($content) {
 
    // echo $content;
@@ -111,7 +112,7 @@ function custom_gallery_output($content) {
 add_filter('the_content', 'custom_gallery_output');
 
 
-
+*/
 
 
 
