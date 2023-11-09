@@ -78,9 +78,8 @@ endif;
     }
 
 
-/*
+
     jQuery(document).ready(function($) {
-        console.log("aa");
         // Selecciona todas las imágenes en el contenido
         $('#noticia img').each(function() {
             // Obtiene el contenedor padre de la imagen
@@ -96,12 +95,14 @@ endif;
                 // Si está dentro de una galería, agrega el atributo rel="gallery" al enlace
                 imgLink.attr('rel', 'gallery');
             }
-
+ 
             // Envuelve la imagen con el enlace
             $(this).wrap(imgLink);
         });
     });
-    */
+    
+
+    
 </script>
 
 <style>
