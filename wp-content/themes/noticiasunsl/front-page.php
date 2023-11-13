@@ -359,78 +359,78 @@ $videos = obtener_videos_de_youtube();
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
-        <?php
-$args = array(
-    'post_type'      => 'post',
-    'posts_per_page' => 4,
-    'order'          => 'DESC',
-);
+            <?php
+            $args = array(
+                'post_type'      => 'post',
+                'posts_per_page' => 4,
+                'order'          => 'DESC',
+            );
 
-$latest_posts = get_posts($args);
-?>
+            $latest_posts = get_posts($args);
+            ?>
 
-<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper3">
-    <div class="swiper-wrapper">
-    <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
-            <div class="swiper-slide">
-                <div class="flex flex-col items-center p-10">
-                    <?php
-                    // Obtener la URL de la imagen destacada o adjunta
-                    $thumbnail_id = get_post_thumbnail_id($post->ID);
-                    $thumbnail_url = wp_get_attachment_url($thumbnail_id);
-                    if (empty($thumbnail_url)) {
-                        $attachments = get_posts(array(
-                            'post_type'      => 'attachment',
-                            'posts_per_page' => 1,
-                            'post_parent'    => $post->ID,
-                            'order'          => 'ASC'
-                        ));
-                        if ($attachments) {
-                            $thumbnail_url = wp_get_attachment_url($attachments[0]->ID);
-                        }
-                    }
-                    ?>
-                    <img class="w-full max-w-screen-md" src="<?php echo esc_url($thumbnail_url); ?>" />
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper3">
+                <div class="swiper-wrapper">
+                    <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
+                        <div class="swiper-slide">
+                            <div class="flex flex-col items-center p-10">
+                                <?php
+                                // Obtener la URL de la imagen destacada o adjunta
+                                $thumbnail_id = get_post_thumbnail_id($post->ID);
+                                $thumbnail_url = wp_get_attachment_url($thumbnail_id);
+                                if (empty($thumbnail_url)) {
+                                    $attachments = get_posts(array(
+                                        'post_type'      => 'attachment',
+                                        'posts_per_page' => 1,
+                                        'post_parent'    => $post->ID,
+                                        'order'          => 'ASC'
+                                    ));
+                                    if ($attachments) {
+                                        $thumbnail_url = wp_get_attachment_url($attachments[0]->ID);
+                                    }
+                                }
+                                ?>
+                                <img class="w-full max-w-screen-md" src="<?php echo esc_url($thumbnail_url); ?>" />
 
-                    <p class="py-5"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?></p>
+                                <p class="py-5"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach;
+                    wp_reset_postdata(); ?>
+                </div>
+                <div class="swiper-button-next" style="z-index:50;"></div>
+                <div class="swiper-button-prev" style="z-index:50;"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
+                        <div class="swiper-slide w-full h-full">
+                            <?php
+                            // Obtener la URL de la imagen destacada o adjunta
+                            $thumbnail_id = get_post_thumbnail_id($post->ID);
+                            $thumbnail_url = wp_get_attachment_url($thumbnail_id);
+                            if (empty($thumbnail_url)) {
+                                $attachments = get_posts(array(
+                                    'post_type'      => 'attachment',
+                                    'posts_per_page' => 1,
+                                    'post_parent'    => $post->ID,
+                                    'order'          => 'ASC'
+                                ));
+                                if ($attachments) {
+                                    $thumbnail_url = wp_get_attachment_url($attachments[0]->ID);
+                                }
+                            }
+                            ?>
+                            <img src="<?php echo esc_url($thumbnail_url); ?>" />
+                        </div>
+                    <?php endforeach;
+                    wp_reset_postdata(); ?>
                 </div>
             </div>
-        <?php endforeach;
-        wp_reset_postdata(); ?>
-    </div>
-    <div class="swiper-button-next" style="z-index:50;"></div>
-    <div class="swiper-button-prev" style="z-index:50;"></div>
-    <div class="swiper-pagination"></div>
-</div>
 
-<div thumbsSlider="" class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
-            <div class="swiper-slide">
-                <?php
-                // Obtener la URL de la imagen destacada o adjunta
-                $thumbnail_id = get_post_thumbnail_id($post->ID);
-                $thumbnail_url = wp_get_attachment_url($thumbnail_id);
-                if (empty($thumbnail_url)) {
-                    $attachments = get_posts(array(
-                        'post_type'      => 'attachment',
-                        'posts_per_page' => 1,
-                        'post_parent'    => $post->ID,
-                        'order'          => 'ASC'
-                    ));
-                    if ($attachments) {
-                        $thumbnail_url = wp_get_attachment_url($attachments[0]->ID);
-                    }
-                }
-                ?>
-                <img src="<?php echo esc_url($thumbnail_url); ?>" />
-            </div>
-        <?php endforeach;
-        wp_reset_postdata(); ?>
-    </div>
-</div>
-
-
+          
             <!--  <iframe class="w-full h-full" src="https://www.youtube.com/embed/oHg5SJYRHA0" title="RickRoll&#39;D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               -->
 
@@ -496,6 +496,7 @@ $latest_posts = get_posts($args);
     .swiper-slide {
         text-align: center;
         font-size: 18px;
+    
         background: #fff;
         display: flex;
         justify-content: center;
