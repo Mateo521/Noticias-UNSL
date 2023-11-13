@@ -78,7 +78,7 @@ endif;
     }
 
 
-
+/*
     jQuery(document).ready(function($) {
         // Selecciona todas las imágenes en el contenido
         $('#noticia img').each(function() {
@@ -101,7 +101,7 @@ endif;
         });
     });
     
-
+*/
     
 </script>
 

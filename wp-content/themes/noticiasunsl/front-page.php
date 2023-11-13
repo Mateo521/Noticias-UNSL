@@ -1,67 +1,60 @@
 <?php
 get_header();
-?>
+$args = array(
+    'post_type'      => 'post',
+    'posts_per_page' => 5,
+    'order'          => 'DESC',
+);
 
+$latest_posts = get_posts($args);
+
+?>
 
 <!-- Swiper -->
 <div class="swiper mySwiper4">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale);background-size:cover;">
-                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
-                    <div class="text-white p-12 z-10" style="z-index: 1;">
-                        <p>INSTITUCIONAL</p>
-                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
+        <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
+            <?php
+            // Obtener todas las imágenes adjuntas al post
+            $attachments = get_posts(array(
+                'post_type'      => 'attachment',
+                'posts_per_page' => -1,
+                'post_parent'    => $post->ID,
+                'order'          => 'ASC'
+            ));
+
+            if ($attachments) {
+                // Obtener la URL de la primera imagen adjunta
+                $first_attachment = reset($attachments); // Obtiene el primer elemento del array
+                $thumbnail_url = wp_get_attachment_url($first_attachment->ID);
+            } else {
+                // Si no hay imágenes adjuntas, proporcionar una URL de imagen de respaldo
+                $thumbnail_url = 'img.img'; // Reemplaza esto con la URL de tu imagen de respaldo
+            }
+            ?>
+
+
+            <div class="swiper-slide">
+
+                <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>);background-size:cover; background-position:center; background-repeat:no-repeat;">
+
+                    <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
+
+                        <div class="text-white p-12 z-10" style="z-index: 1;">
+                            <p><?php echo get_the_category_list(', ', '', $post->ID); ?></p>
+                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>">
+                                <h1 class="text-4xl"><?php echo get_the_title($post->ID); ?></h1>
+                            </a>
+                        </div>
+
+                        <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);"></div>
                     </div>
 
-                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=2);background-size:cover;">
-                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
-                    <div class="text-white p-12 z-10" style="z-index: 1;">
-                        <p>INSTITUCIONAL</p>
-                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
-                    </div>
-
-                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=3);background-size:cover;">
-                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
-                    <div class="text-white p-12 z-10" style="z-index: 1;">
-                        <p>INSTITUCIONAL</p>
-                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
-                    </div>
-
-                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(https://picsum.photos/1366/720?grayscale?page=4);background-size:cover;">
-                <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
-                    <div class="text-white p-12 z-10" style="z-index: 1;">
-                        <p>INSTITUCIONAL</p>
-                        <h1 class="text-4xl">Fernando Tauber recibió el título Doctor Honoris CAUSA de la UNDAV</h1>
-                    </div>
-
-                    <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);">
-                    </div>
 
                 </div>
             </div>
-        </div>
+        <?php endforeach;
+        wp_reset_postdata(); ?>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -73,10 +66,6 @@ get_header();
         <span></span>
     </div>
 </div>
-
-
-
-
 
 
 
@@ -370,68 +359,77 @@ $videos = obtener_videos_de_youtube();
 <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
-            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper3">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+        <?php
+$args = array(
+    'post_type'      => 'post',
+    'posts_per_page' => 4,
+    'order'          => 'DESC',
+);
 
-                        <div class="flex flex-col items-center p-10">
-                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=1" />
+$latest_posts = get_posts($args);
+?>
 
-                            <p class="py-5">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="flex flex-col items-center p-10">
-                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=2" />
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; " class="swiper mySwiper3">
+    <div class="swiper-wrapper">
+    <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
+            <div class="swiper-slide">
+                <div class="flex flex-col items-center p-10">
+                    <?php
+                    // Obtener la URL de la imagen destacada o adjunta
+                    $thumbnail_id = get_post_thumbnail_id($post->ID);
+                    $thumbnail_url = wp_get_attachment_url($thumbnail_id);
+                    if (empty($thumbnail_url)) {
+                        $attachments = get_posts(array(
+                            'post_type'      => 'attachment',
+                            'posts_per_page' => 1,
+                            'post_parent'    => $post->ID,
+                            'order'          => 'ASC'
+                        ));
+                        if ($attachments) {
+                            $thumbnail_url = wp_get_attachment_url($attachments[0]->ID);
+                        }
+                    }
+                    ?>
+                    <img class="w-full max-w-screen-md" src="<?php echo esc_url($thumbnail_url); ?>" />
 
-                            <p class="py-5">Titulo 2</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="flex flex-col items-center p-10">
-                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=3" />
-
-                            <p class="py-5">Titulo 3</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="flex flex-col items-center p-10">
-                            <img class="w-full max-w-screen-md" src="https://picsum.photos/1100/700.jpg?page=4" />
-
-                            <p class="py-5">Titulo 4</p>
-                        </div>
-                    </div>
+                    <p class="py-5"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?></p>
                 </div>
-
-                <div class="swiper-button-next" style="z-index:50;"></div>
-                <div class="swiper-button-prev" style="z-index:50;"></div>
-
-                <div class="swiper-pagination"></div>
             </div>
-            <!--
-            <p class="text-2xl">Personal de la Guardia Costera de Suecia trabaja en la limpieza después de la fuga de petróleo del ferry Marco Polo encallado en la costa de Horvik, al sur de Suecia (Johan Nilsson/TT News Agency vía AP).</p>
-            -->
-            <div thumbsSlider="" class="swiper mySwiper  ">
+        <?php endforeach;
+        wp_reset_postdata(); ?>
+    </div>
+    <div class="swiper-button-next" style="z-index:50;"></div>
+    <div class="swiper-button-prev" style="z-index:50;"></div>
+    <div class="swiper-pagination"></div>
+</div>
 
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="https://picsum.photos/1100/700.jpg?page=1" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://picsum.photos/1100/700.jpg?page=2" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="https://picsum.photos/1100/700.jpg?page=3" />
-                    </div>
-                    <div class="swiper-slide">
-
-                        <img src="https://img.freepik.com/foto-gratis/fondo-producto-pared-negro-oscuro-liso_53876-129678.jpg?t=st=1698705032~exp=1698705632~hmac=b3df4b4f5bb274120d3da8b84c27c551b401f9e62541cac18653" />
-                        <p class="absolute text-white">Ver más</p>
-
-                    </div>
-                </div>
-
+<div thumbsSlider="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
+            <div class="swiper-slide">
+                <?php
+                // Obtener la URL de la imagen destacada o adjunta
+                $thumbnail_id = get_post_thumbnail_id($post->ID);
+                $thumbnail_url = wp_get_attachment_url($thumbnail_id);
+                if (empty($thumbnail_url)) {
+                    $attachments = get_posts(array(
+                        'post_type'      => 'attachment',
+                        'posts_per_page' => 1,
+                        'post_parent'    => $post->ID,
+                        'order'          => 'ASC'
+                    ));
+                    if ($attachments) {
+                        $thumbnail_url = wp_get_attachment_url($attachments[0]->ID);
+                    }
+                }
+                ?>
+                <img src="<?php echo esc_url($thumbnail_url); ?>" />
             </div>
+        <?php endforeach;
+        wp_reset_postdata(); ?>
+    </div>
+</div>
+
 
             <!--  <iframe class="w-full h-full" src="https://www.youtube.com/embed/oHg5SJYRHA0" title="RickRoll&#39;D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               -->
