@@ -53,44 +53,40 @@ add_filter('show_admin_bar', 'my_function_admin_bar');
 
 //$videos = json_decode(file_get_contents());
 
-function obtener_videos_de_youtube()
-{
+function obtener_videos_de_youtube() {
     $cached_results = get_transient('youtube_api_cache');
+    
     if ($cached_results) {
         return $cached_results;
     } else {
-
-    
-
-
-
-        $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
-        $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
+        $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE'; //institucional
+       
+        $api_url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$playlistid&maxResults=$max&key=$key&order=date";
 
-    //    $api_url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . '&playlistId=' . $playlistid . '';
-    $api_url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$playlistid&maxResults=$max&key=$key";
-        
-
-    
-    $response = wp_remote_get($api_url);
+        $response = wp_remote_get($api_url);
 
         if (is_wp_error($response)) {
-            return array(); // Manejar errores de solicitud
+            // Manejar errores de solicitud
+            error_log('Error al obtener videos de YouTube: ' . $response->get_error_message());
+            return array();
         }
-
-        
-  
-        
-
 
         $body = wp_remote_retrieve_body($response);
         $data = json_decode($body, true);
-        set_transient('youtube_api_cache', $data, 60 * 60);
 
+        if (isset($data['error'])) {
+            // Manejar errores de la API de YouTube
+            error_log('Error en la API de YouTube: ' . json_encode($data['error']));
+            return array();
+        }
+
+        set_transient('youtube_api_cache', $data, 60 * 60);
         return $data;
     }
 }
+
+
 
 
 

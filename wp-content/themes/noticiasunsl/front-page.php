@@ -312,17 +312,19 @@ $videos = obtener_videos_de_youtube();
                 <div class="grid-container-3 w-full p-3">
 
                     <div class="item1" id="item1">
+
+
                         <!-- Aquí se mostrará el primer video de la API -->
                         <?php if (!empty($videos)) {
-                            // Muestra el primer video de la API
-                            $primer_video = $videos['items'][0];
+                            $videoId = $videos['items'][0]['snippet']['resourceId']['videoId'];
                             $thumbnails = $primer_video['snippet']['thumbnails'];
                             $thumbnail_url = $thumbnails['medium']['url'];
                         ?>
                             <div class="flex h-full" style="flex-direction:column;">
-                                <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $primer_video['id']['videoId']; ?>" frameborder="0" allowfullscreen></iframe>
-                                <!--    <p class="text-xl py-5"><?php echo $primer_video['snippet']['title']; ?></p> -->
+                                <iframe id="videoPlayer" class="w-full h-full" height="315" src="https://www.youtube.com/embed/<?php echo $videoId; ?>" frameborder="0" allowfullscreen></iframe>
+                                <!-- <p class="text-xl py-5"><?php echo $videos['items'][0]['snippet']['title']; ?></p> -->
                             </div>
+
                         <?php
                         }
                         ?>
@@ -334,7 +336,7 @@ $videos = obtener_videos_de_youtube();
                         $thumbnail_url = $thumbnails['medium']['url'];
                     ?>
                         <!-- Contenido de la miniatura -->
-                        <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['id']['videoId']; ?>">
+                        <div style="cursor:pointer;" class="miniatura item<?php echo ($index + 2); ?>" data-video-id="<?php echo $video['snippet']['resourceId']['videoId']; ?>">
                             <div class="grid items-center gap-3 grid-cols-2">
                                 <div class="relative w-full h-full">
 
@@ -373,7 +375,7 @@ $videos = obtener_videos_de_youtube();
                 <div class="swiper-wrapper">
                     <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
                         <div class="swiper-slide">
-                            <div class="flex flex-col items-center p-10">
+                            <div class="flex flex-col items-center">
                                 <?php
                                 // Obtener la URL de la imagen destacada o adjunta
                                 $thumbnail_id = get_post_thumbnail_id($post->ID);
@@ -390,9 +392,11 @@ $videos = obtener_videos_de_youtube();
                                     }
                                 }
                                 ?>
-                                <img  src="<?php echo esc_url($thumbnail_url); ?>" />
-
+                                <div class="w-full" style="height:550px;">
+                                    <img class="w-full h-full" src="<?php echo esc_url($thumbnail_url); ?>" />
+                                </div>
                                 <p class="py-5"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?></p>
+
                             </div>
                         </div>
                     <?php endforeach;
@@ -430,7 +434,7 @@ $videos = obtener_videos_de_youtube();
                 </div>
             </div>
 
-          
+
             <!--  <iframe class="w-full h-full" src="https://www.youtube.com/embed/oHg5SJYRHA0" title="RickRoll&#39;D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               -->
 
@@ -498,7 +502,7 @@ $videos = obtener_videos_de_youtube();
     .swiper-slide {
         text-align: center;
         font-size: 18px;
-    
+
         background: #fff;
         display: flex;
         justify-content: center;
@@ -521,7 +525,8 @@ $videos = obtener_videos_de_youtube();
         width: 100%;
         max-width: 950px;
     }
-/*
+
+    /*
     .mySwiper {
         height: 20%;
         box-sizing: border-box;
@@ -530,7 +535,7 @@ $videos = obtener_videos_de_youtube();
 
     .mySwiper .swiper-slide {
         width: 25%;
-         height: 150px;
+        height: 150px;
         opacity: 0.4;
     }
 
@@ -544,7 +549,6 @@ $videos = obtener_videos_de_youtube();
         height: 100%;
         object-fit: cover;
     }
- 
 </style>
 
 
