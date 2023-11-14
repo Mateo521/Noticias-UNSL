@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['single.php'],
+  content: ['single.php','header.php'],
   presets: [],
   darkMode: 'media', // or 'class'
   theme: {

@@ -60,17 +60,29 @@ function obtener_videos_de_youtube()
         return $cached_results;
     } else {
 
+    
+
+
 
         $canal = "UCZZWwoQL1ZpRU-8hdsrUpew";
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE';
 
-        $api_url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . '&playlistId=' . $playlistid . '';
-        $response = wp_remote_get($api_url);
+    //    $api_url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=' . $canal . '&maxResults=' . $max . '&key=' . $key . '&playlistId=' . $playlistid . '';
+    $api_url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$playlistid&maxResults=$max&key=$key";
+        
+
+    
+    $response = wp_remote_get($api_url);
 
         if (is_wp_error($response)) {
             return array(); // Manejar errores de solicitud
         }
+
+        
+  
+        
+
 
         $body = wp_remote_retrieve_body($response);
         $data = json_decode($body, true);

@@ -390,7 +390,7 @@ $videos = obtener_videos_de_youtube();
                                     }
                                 }
                                 ?>
-                                <img class="w-full max-w-screen-md" src="<?php echo esc_url($thumbnail_url); ?>" />
+                                <img  src="<?php echo esc_url($thumbnail_url); ?>" />
 
                                 <p class="py-5"><?php echo esc_html(wp_trim_words(get_the_excerpt(), 20)); ?></p>
                             </div>
@@ -403,10 +403,10 @@ $videos = obtener_videos_de_youtube();
                 <div class="swiper-pagination"></div>
             </div>
 
-            <div thumbsSlider="" class="swiper mySwiper">
+            <div thumbsSlider="" class="swiper mySwiper  p-3">
                 <div class="swiper-wrapper">
                     <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
-                        <div class="swiper-slide w-full h-full">
+                        <div class="swiper-slide">
                             <?php
                             // Obtener la URL de la imagen destacada o adjunta
                             $thumbnail_id = get_post_thumbnail_id($post->ID);
@@ -490,6 +490,8 @@ $videos = obtener_videos_de_youtube();
     }
 
     .swiper-wrapper {
+        width: 100%;
+        height: 100%;
         align-items: flex-end;
     }
 
@@ -519,16 +521,16 @@ $videos = obtener_videos_de_youtube();
         width: 100%;
         max-width: 950px;
     }
-
+/*
     .mySwiper {
         height: 20%;
         box-sizing: border-box;
         padding: 10px 0;
-    }
+    }*/
 
     .mySwiper .swiper-slide {
         width: 25%;
-        //   height: 200px;
+         height: 150px;
         opacity: 0.4;
     }
 
@@ -540,8 +542,9 @@ $videos = obtener_videos_de_youtube();
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
+ 
 </style>
 
 
