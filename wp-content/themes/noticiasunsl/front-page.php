@@ -214,14 +214,16 @@ $latest_posts = get_posts($args);
 
             <div class="swiper-slide">
 
-                <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>);background-size:cover; background-position:top; background-repeat:no-repeat;">
+                <div class="max-screen-2xl w-full  bg-cover">
 
                     <div style="align-items: flex-end;" class="relative h-full flex items-end  ">
 
-                        <div class="text-white p-12 z-10" style="z-index: 1;">
+                        <img src="<?php echo esc_url($thumbnail_url); ?>" class="w-full h-full" alt="">
+                        <div class="text-white md:p-12 p-1 z-10 absolute" style="z-index: 1;">
+
                             <p class="text-left py-5 uppercase"><?php echo get_the_category_list(', ', '', $post->ID); ?></p>
                             <a href="<?php echo esc_url(get_permalink($post->ID)); ?>">
-                                <h1 class="text-4xl"><?php echo get_the_title($post->ID); ?></h1>
+                                <h1 class="md:text-4xl text-xl"><?php echo get_the_title($post->ID); ?></h1>
                             </a>
                         </div>
 
@@ -437,6 +439,7 @@ $videos = obtener_videos_de_youtube();
                                 if (empty($thumbnail_url)) {
                                     $attachments = get_posts(array(
                                         'post_type'      => 'attachment',
+
                                         'posts_per_page' => 1,
                                         'post_parent'    => $post->ID,
                                         'order'          => 'ASC'
