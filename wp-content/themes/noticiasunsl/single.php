@@ -5,6 +5,8 @@ if (have_posts()) :
         the_post();
 ?>
 
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/lightbox2-2.11.4/dist/css/lightbox.min.css">
+
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
@@ -32,15 +34,7 @@ if (have_posts()) :
 endif;
 
 ?>
-
-
-
-
-
-
-
 <!-- PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
-
 <script>
     function tipografia() {
         document.body.classList.toggle("tipog");
@@ -78,32 +72,19 @@ endif;
     }
 
 
-/*
-    jQuery(document).ready(function($) {
-        // Selecciona todas las imágenes en el contenido
+    /*
+        jQuery(document).ready(function($) {
         $('#noticia img').each(function() {
-            // Obtiene el contenedor padre de la imagen
-            var parentFigure = $(this).closest('figure.wp-block-gallery');
-
-            // Obtiene la URL de la imagen
             var imgSrc = $(this).attr('src');
-            // Crea un enlace alrededor de la imagen
-            var imgLink = $('<a href="' + imgSrc + '" class="fbx-link" />');
-
-            // Verifica si la imagen está dentro de un contenedor con la clase wp-block-gallery
-            if (parentFigure.length > 0) {
-                // Si está dentro de una galería, agrega el atributo rel="gallery" al enlace
-                imgLink.attr('rel', 'gallery');
-            }
- 
-            // Envuelve la imagen con el enlace
+            var imgLink = $('<a href="' + imgSrc + '"></a>'); // Corrección: cerrar la comilla en 'href'
             $(this).wrap(imgLink);
         });
     });
-    
-*/
-    
+    */
 </script>
+
+
+
 
 <style>
     html {
@@ -139,8 +120,80 @@ endif;
     }
 </style>
 <!--FIN PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
+<!--
+<section>
+    <h3>Two Individual Images</h3>
+    <div>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1">
+            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" />
+        </a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-1" data-title="Optional caption.">
+            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1" />
+        </a>
+    </div>
+
+    <div>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="img-1">
+            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" />
+        </a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="img-2" data-title="Optional caption.">
+            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1" />
+        </a>
+    </div>
+
+    <h3>A Four Image Set</h3>
+    <div class="flex gap-2">
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt="" /></a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
+        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
+    </div>
+</section>
+
+como puedo que con todas las imagenes que estan en el componente con id ="noticia" se remplacen de la siguiente forma
+<a  href="#" data-lightbox="img-1">
+            <img  src="#" />
+ </a>
+ es decir que por cada imagen tenga un hipervinculo de la forma "<a  href="#" data-lightbox="img-1"></a>", y la imagen
+       
+
+ <section>
+    <p>
+        For more information, visit <a href="http://lokeshdhakar.com/projects/lightbox2/">http://lokeshdhakar.com/projects/lightbox2/</a>
+    </p>
+</section>
+        -->     
+
+<script>
+
+jQuery(document).ready(function($) {
+    $('#noticia img').each(function(index) {
+        var imgSrc = $(this).attr('src');
+        
+        // Verificar si la imagen tiene un componente padre <figure class="wp-block-gallery">
+        var hasGalleryParent = $(this).parents('figure.wp-block-gallery').length > 0;
+
+        // Crear el elemento <a> con el formato deseado
+        var imgLink = $('<a>', {
+            href: imgSrc,  // Utilizar la URL de la imagen como href
+            'data-lightbox': hasGalleryParent ? 'img-gallery' : 'img-' + (index + 1) // Utilizar un valor diferente si hay un componente padre de galería
+        });
+
+        // Crear el elemento <img> y establecer su atributo src
+        var imgElement = $('<img>', {
+            src: imgSrc
+        });
+
+        // Envolver la imagen con el enlace y reemplazarla en el DOM
+        $(this).wrap(imgLink).after(imgElement).remove();
+    });
+});
 
 
+</script>
 
+
+        
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/lightbox2-2.11.4/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <?php get_footer(); ?>
