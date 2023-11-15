@@ -4,6 +4,7 @@ $args = array(
     'post_type'      => 'post',
     'posts_per_page' => 5,
     'order'          => 'DESC',
+    'category__not_in' => array(get_category_by_slug('entrevistas')->term_id)
 );
 
 $latest_posts = get_posts($args);
@@ -172,24 +173,77 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 </div>
 
 
-<div class="relative p-1 hidden md:block" style=" object-fit:cover;">
-    <img class="w-full h-full" src="https://www.telam.com.ar/advf/imagenes/2023/10/65328e2fe891d.jpg" alt="">
-    <div class="absolute bottom-0 text-white p-5">
 
-        <h1 class="md:text-4xl">ENTREVISTA EXCLUSIVA AL PAPA FRANCISCO </h1>
-        <p class="md:text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
+
+
+<?php
+$args = array(
+    'post_type'      => 'post',
+    'posts_per_page' => 5,
+    'category_name' => 'entrevistas',
+    'order'          => 'DESC',
+);
+
+$latest_posts = get_posts($args);
+
+?>
+
+<!-- Swiper -->
+<div class="swiper mySwiper4">
+    <div class="swiper-wrapper">
+        <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
+            <?php
+            // Obtener todas las imágenes adjuntas al post
+            $attachments = get_posts(array(
+                'post_type'      => 'attachment',
+                'posts_per_page' => -1,
+                'post_parent'    => $post->ID,
+                'order'          => 'ASC'
+            ));
+
+            if ($attachments) {
+                // Obtener la URL de la primera imagen adjunta
+                $first_attachment = reset($attachments); // Obtiene el primer elemento del array
+                $thumbnail_url = wp_get_attachment_url($first_attachment->ID);
+            } else {
+                // Si no hay imágenes adjuntas, proporcionar una URL de imagen de respaldo
+                $thumbnail_url = 'img.img'; // Reemplaza esto con la URL de tu imagen de respaldo
+            }
+            ?>
+
+
+            <div class="swiper-slide">
+
+                <div class="max-screen-2xl w-full h-96 bg-cover" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>);background-size:cover; background-position:top; background-repeat:no-repeat;">
+
+                    <div style="align-items: flex-end;" class="relative h-full flex items-end  ">
+
+                        <div class="text-white p-12 z-10" style="z-index: 1;">
+                            <p class="text-left py-5 uppercase"><?php echo get_the_category_list(', ', '', $post->ID); ?></p>
+                            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>">
+                                <h1 class="text-4xl"><?php echo get_the_title($post->ID); ?></h1>
+                            </a>
+                        </div>
+
+                        <div class="absolute h-96 w-full" style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        <?php endforeach;
+        wp_reset_postdata(); ?>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+    <div class="autoplay-progress">
+        <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+        </svg>
+        <span></span>
     </div>
 </div>
-<div class="relative p-1 md:hidden block" style=" object-fit:cover;">
-    <img class="w-full h-full" src="https://www.telam.com.ar/advf/imagenes/2023/10/6532bfe4bc1ca.jpg" alt="">
-    <div class="absolute bottom-0 text-white p-5">
-
-        <h1 class="md:text-4xl">ENTREVISTA EXCLUSIVA AL PAPA FRANCISCO </h1>
-        <p class="md:text-xl">Estamos viviendo una guerra mundial a pedacitos</p>
-    </div>
-</div>
-
-
 
 
 
