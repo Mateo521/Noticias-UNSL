@@ -80,6 +80,9 @@ endif;
             $(this).wrap(imgLink);
         });
     });
+
+
+
     */
 </script>
 
@@ -119,50 +122,22 @@ endif;
         height: 100% !important;
     }
 </style>
+<!-- 
+CATEGORIAS: 
+
+INSTITUCIONAL
+CIENCIA
+SOCIEDAD
+ENTREVISTAS
+CULTURA
+AGENDA UNIVERSITARIA
+LABORATORIOS
+UNSL
+
+ -->
+
 <!--FIN PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
-<!--
-<section>
-    <h3>Two Individual Images</h3>
-    <div>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1">
-            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" />
-        </a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-1" data-title="Optional caption.">
-            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1" />
-        </a>
-    </div>
-
-    <div>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="img-1">
-            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" />
-        </a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="img-2" data-title="Optional caption.">
-            <img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1" />
-        </a>
-    </div>
-
-    <h3>A Four Image Set</h3>
-    <div class="flex gap-2">
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt="" /></a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
-        <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
-    </div>
-</section>
-
-como puedo que con todas las imagenes que estan en el componente con id ="noticia" se remplacen de la siguiente forma
-<a  href="#" data-lightbox="img-1">
-            <img  src="#" />
- </a>
- es decir que por cada imagen tenga un hipervinculo de la forma "<a  href="#" data-lightbox="img-1"></a>", y la imagen
-       
-
- <section>
-    <p>
-        For more information, visit <a href="http://lokeshdhakar.com/projects/lightbox2/">http://lokeshdhakar.com/projects/lightbox2/</a>
-    </p>
-</section>
-        -->     
+   
 
 <script>
 

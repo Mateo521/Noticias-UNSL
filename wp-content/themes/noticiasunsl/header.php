@@ -23,7 +23,7 @@
         <span class="self-center text-2xl  whitespace-nowrap dark:text-white">Noticias UNSL</span>
       </a>
       <div class="flex md:order-2">
-<!--
+        <!--
         <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700  text-sm p-2.5 mr-1">
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -39,7 +39,7 @@
             <span class="sr-only">Search icon</span>
           </div>
           <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-          <input type="text" id="search-navbar" name="s" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar">
+            <input type="text" id="search-navbar" name="s" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar">
           </form>
         </div>
         <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500  md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
@@ -57,22 +57,20 @@
             </svg>
           </div>
           <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-       
-          <input type="text" id="search-navbar" name="s"  class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar">
+
+            <input type="text" id="search-navbar" name="s" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar">
           </form>
         </div>
         <ul class="flex py-5 justify-between w-full gap-5 px-3 md:hidden flex p-1" style="flex-direction: column;">
           <li><a href="<?php echo esc_url(home_url('/')); ?>"> INICIO</a></li>
-          <li>PUBLICAS</li>
-          <li>PRIVADAS</li>
-          <li>CYT</li>
-          <li>EXTENSION</li>
-          <li>GREMIALES</li>
-          <li>ORGANIZACIONES</li>
-          <li>BECAS</li>
-          <li>OPINION</li>
-          <li>LATINOAMERICA</li>
-          <li>ENTREVISTAS</li>
+          <li> INSTITUCIONAL</li>
+          <li>CIENCIA</li>
+          <li> SOCIEDAD</li>
+          <li> ENTREVISTAS</li>
+          <li> CULTURA</li>
+          <li> AGENDA UNIVERSITARIA</li>
+          <li> LABORATORIOS</li>
+          <li> UNSL</li>
         </ul>
       </div>
     </div>
@@ -88,16 +86,14 @@
 
           <ul class="flex justify-between w-full gap-5 px-3 flex-wrap hidden md:flex p-1">
           <li><a href="<?php echo esc_url(home_url('/')); ?>"> INICIO</a></li>
-            <li>PUBLICAS</li>
-            <li>PRIVADAS</li>
-            <li>CYT</li>
-            <li>EXTENSION</li>
-            <li>GREMIALES</li>
-            <li>ORGANIZACIONES</li>
-            <li>BECAS</li>
-            <li>OPINION</li>
-            <li>LATINOAMERICA</li>
-            <li>ENTREVISTAS</li>
+          <li>INSTITUCIONAL</li>
+          <li>CIENCIA</li>
+          <li>SOCIEDAD</li>
+          <li>ENTREVISTAS</li>
+          <li>CULTURA</li>
+          <li>AGENDA UNIVERSITARIA</li>
+          <li>LABORATORIOS</li>
+          <li>UNSL</li>
           </ul>
         </div>
 
@@ -107,7 +103,7 @@
 
   <div class="w-full header-m"> </div>
 
-<!--
+  <!--
   <div class="flex md:order-2">
 
     <div class="relative hidden md:flex flex gap-5 items-center">
