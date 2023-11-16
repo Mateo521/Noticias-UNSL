@@ -194,6 +194,6 @@ jQuery(document).ready(function($) {
 
 
         
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/lightbox2-2.11.4/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/lightbox2-2.11.4/dist/js/lightbox-plus-jquery.js"></script>
 
 <?php get_footer(); ?>
