@@ -63,14 +63,14 @@
         </div>
         <ul class="flex py-5 justify-between w-full gap-5 px-3 md:hidden flex p-1" style="flex-direction: column;">
           <li><a href="<?php echo esc_url(home_url('/')); ?>"> INICIO</a></li>
-          <li> INSTITUCIONAL</li>
-          <li>CIENCIA</li>
-          <li> SOCIEDAD</li>
-          <li> ENTREVISTAS</li>
-          <li> CULTURA</li>
-          <li> AGENDA UNIVERSITARIA</li>
-          <li> LABORATORIOS</li>
-          <li> UNSL</li>
+          <li><a href="<?php echo esc_url(home_url('category/institucional')); ?>">INSTITUCIONAL</a></li> 
+          <li><a href="<?php echo esc_url(home_url('category/ciencia')); ?>">CIENCIA</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/sociedad')); ?>"> SOCIEDAD</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/entrevistas')); ?>"> ENTREVISTAS</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/cultura')); ?>"> CULTURA</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/agenda-universitaria')); ?>"> AGENDA UNIVERSITARIA</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/laboratorios')); ?>"> LABORATORIOS</a></li>
+          <li><a target="_blank" href="http://www.unsl.edu.ar"> UNSL</a></li>
         </ul>
       </div>
     </div>
@@ -86,14 +86,14 @@
 
           <ul class="flex justify-between w-full gap-5 px-3 flex-wrap hidden md:flex p-1">
           <li><a href="<?php echo esc_url(home_url('/')); ?>"> INICIO</a></li>
-          <li>INSTITUCIONAL</li>
-          <li>CIENCIA</li>
-          <li>SOCIEDAD</li>
-          <li>ENTREVISTAS</li>
-          <li>CULTURA</li>
-          <li>AGENDA UNIVERSITARIA</li>
-          <li>LABORATORIOS</li>
-          <li>UNSL</li>
+          <li><a href="<?php echo esc_url(home_url('category/institucional')); ?>">INSTITUCIONAL</a></li> 
+          <li><a href="<?php echo esc_url(home_url('category/ciencia')); ?>">CIENCIA</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/sociedad')); ?>"> SOCIEDAD</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/entrevistas')); ?>"> ENTREVISTAS</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/cultura')); ?>"> CULTURA</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/agenda-universitaria')); ?>"> AGENDA UNIVERSITARIA</a></li>
+          <li><a href="<?php echo esc_url(home_url('category/laboratorios')); ?>"> LABORATORIOS</a></li>
+          <li><a target="_blank" href="http://www.unsl.edu.ar"> UNSL</a></li>
           </ul>
         </div>
 

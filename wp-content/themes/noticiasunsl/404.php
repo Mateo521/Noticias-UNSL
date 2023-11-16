@@ -2,7 +2,12 @@
 get_header();
 ?>
 
-<p>ERROR</p>
+
+
+<p>ERROR 404</p>
+
+
+
 <?php
 
 get_footer();

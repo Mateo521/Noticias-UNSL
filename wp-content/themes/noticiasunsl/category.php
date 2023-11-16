@@ -20,7 +20,7 @@ if ($current_category) {
                             preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
                             if ($matches) {
                                 $img_src = $matches[1];
-                                echo '<div class="entry-thumb"><img class="rounded-t-lg" src="' . $img_src . '" alt="Imagen de la noticia"></div>';
+                                echo '<div class="entry-thumb"><img  src="' . $img_src . '" alt="Imagen de la noticia"></div>';
                             }
                             ?>
                             <div class="p-6 w-full  bg-white h-full shadow-lg shadow-gray-500/50">
