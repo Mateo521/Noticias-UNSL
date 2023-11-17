@@ -121,7 +121,11 @@ endif;
         width: 100% !important;
         height: 100% !important;
     }
+    #my-calendar{
+        padding: 10px;
+    }
 </style>
+
 <!-- 
 CATEGORIAS: 
 
