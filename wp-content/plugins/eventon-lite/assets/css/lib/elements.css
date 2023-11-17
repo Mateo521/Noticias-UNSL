@@ -1,0 +1,481 @@
+/* 
+ * EventON Elements CSS 
+ * @version 4.5.2
+    General
+    Lightbox Select Field
+    Select in a row
+    Tool tips
+*/
+
+:root{
+    --evo_color_prime: #00aafb;
+}   
+/* General */
+    .evo_elm_row p.evo_field_container input{
+        border-radius: 8px;
+        background-color: #f3f3f3; width:100%;
+    }
+    .evo_elm_row p.evo_field_container input:focus{
+        box-shadow: 0px 0px 10px 0px #dadada;
+        background-color: #fff;
+    }
+    .evo_elm_row p.evo_field_label, .evo_elm_row p.evo_field_container{margin:0;}
+    .evo_elm_row p.evo_field_label{margin-bottom: 5px; padding-bottom: 0; font-size: 14px;}
+    .evo_elm_row p.evo_field_container{margin-bottom: 10px;padding:0;}
+
+/* yes no button */
+    .ajde_yn_btn {
+        background-color: var(--evo_color_prime);
+        height: 20px;
+        width: 40px;
+        border:1px solid var(--evo_color_prime);
+        overflow: hidden;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 13px;
+        box-sizing:content-box;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -ms-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+    }
+    .ajde_yn_btn:hover{opacity: 0.7}
+    .ajde_yn_btn.NO{
+        background-color: #f0f0f0;
+        border-color: var(--evo_color_1);
+    }
+    .ajde_yn_btn_label{padding-left: 10px; line-height: 1.8;}
+    .ajde_yn_btn .btn_inner:before,.ajde_yn_btn .btn_inner:after{
+        top: 0;
+        position: absolute;     
+        padding: 4px 8px 4px;
+        line-height: 100%;
+    }
+    
+    .ajde_yn_btn .btn_inner{
+        position: relative;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-top: 0;
+        width: 22px;
+        display: block;
+        margin:0;
+        margin-left: 0px;
+        border:none;
+        background:none;
+        box-sizing:content-box;
+    }   
+    .ajde_yn_btn.NO .btn_inner{margin-left: -18px;}
+    .catchHandle, .yesno_row .catchHandle{
+        background-color: #fff;
+        height: 12px;width: 12px;      
+        display: block;
+        padding-left: 0;
+        border-radius: 12px;
+        box-sizing: border-box;
+        margin-top: 4px;
+    }
+    .ajde_yn_btn.NO .catchHandle, .yesno_row .ajde_yn_btn.NO .catchHandle{background-color: var(--evo_color_1)}
+    .ajde_yn_btn.NO .catchHandle:before, .yesno_row .ajde_yn_btn.NO .catchHandle:before{
+        margin-left: 8px;
+    }
+    .ajde_yn_btn .btn_inner, .catchHandle {
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -ms-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+    .yesno_row span.field_name, .yesno_row label, .yesno_leg_line label
+    { padding-left:10px; line-height: 1.8;     }
+    .evo_lightbox .yesno_row span.field_name{padding-left: 10px;}
+    .evo_inside .yesno_row span.field_name{pointer-events:auto;}
+    .yesno_row .ajde_yn_btn { padding: 0;}
+
+/* angle button */
+    .evo_elm_row.angle{display: flex;align-items: center;}
+    .evo_elm_row.angle .evo_elm_ang_hold{
+            display: flex;
+        height: 36px;
+        width: 36px;
+        border: 3px solid #333;
+        border-radius: 18px;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        flex:1 0 auto;
+    }
+    .evo_elm_row.angle .evo_elm_ang_center{
+        position: relative;
+        width: 6px;
+        height: 30px;
+        pointer-events: none;
+    }
+    .evo_elm_row.angle .evo_elm_ang_pointer{
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 2px;
+        border-radius: 3px;
+        background: #1F2667;
+    }
+    .evo_elm_row .evo_elm_ang_inp{
+        width: calc(100% - 12px);
+        height: 30px;
+        padding: 0 8px;
+        margin-left: 12px;
+        border: 1px solid #bbbfc5;
+        border-radius: 6px;
+        -webkit-transition: all 175ms ease-out;
+        transition: all 175ms ease-out;
+        text-align: center;
+    }
+
+/* icon selector everywhere */
+    .evo_icon_selector{}
+    .evo_icon_selector ul{    margin-top: 0;}
+    .evo_icon_selector ul li{
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+        padding: 9px;
+    }
+    .evo_icon_selector ul li:hover{    background-color: #eeeeee;}
+    .evo_icon_selector ul li.selected{background-color: var(--evo_color_prime);}
+    .evo_icon_selector ul li.selected i{}
+    .evo_icon_selector ul li i{
+        font-size: 28px;
+        width: 28px;
+        transition: all linear 0.1s;
+    }
+    .evo_icon_selector ul li:hover i{  transform: scale(1.2); color:var(--evo_color_prime);}
+    .evo_icon_search_bar{margin-top: 10px}
+
+    .evo_icon_search{
+        width: 100%;
+        padding: 7px 10px;
+        margin-bottom: 5px;
+    }
+    
+
+    .ajde_icons.default{
+        height: 35px; width: 45px;
+        padding: 0;
+        display: inline-block;
+        background-color: #CDCDCD;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        box-sizing:border-box;
+    }
+    .ajde_icons.default.fa.focused{background-color: #333; color: #fff; }
+    .ajde_icons.default.fa.so{border-radius: 5px;}
+    .ajde_icons.default.fa{border-radius: 5px 0 0 5px;}
+    .ajde_icons.default.fa:before{
+        font-size: 24px;
+        text-align: center;
+        margin: auto;
+        width: 100%; height: 100%;
+        display: block;line-height: 100%;
+        padding-top: 5px;
+    }
+    .ajde_icons em{display: none;}
+    .ajde_icons.fa em{
+        cursor: pointer;    
+        content: "X";
+        position: absolute;
+        left: 45px;
+        height: 35px;
+        width: 20px;
+        top: 0;
+        display: block;
+        color: #C7C7C7;
+        /*z-index: -1;*/
+        background-color: #E0E0E0;
+        border-radius: 0 5px 5px 0;
+        font-family: 'open sans','arial';
+        font-size: 18px;
+        font-style: normal;
+        padding:  8px 5px;
+        line-height: 100%;
+        box-sizing:border-box;
+    }
+    .ajde_icons.fa em:hover{
+        background-color: #C0C0C0; color: #fff;
+    }
+
+
+/* lightbox select field */
+    .evo_elm_row.evo_elm_lb_select{position: relative;}
+    .evo_elm_lb_window .eelb_in{
+        background-color: #fff;
+        box-shadow: 0 0 0 1px rgba(136,152,170,.1), 0 15px 35px 0 rgba(49,49,93,.1), 0 5px 15px 0 rgba(0,0,0,.08);
+        position: absolute; top:70px;
+        z-index: 9999;
+        border-radius: 8px;   
+        transform: scale(.85);
+        opacity: 0;
+        transition: opacity .25s cubic-bezier(0,1,.4,1),transform .25s cubic-bezier(.18,1.25,.4,1); 
+        padding:10px 0;
+    }
+
+    .evo_elm_lb_window.show .eelb_in{
+        transform: scale(1); opacity: 1;
+    }
+    .evo_elm_lb_window span{display: block;padding:5px 8px 5px 30px;cursor: pointer;position: relative;}
+    .evo_elm_lb_window span:hover{background-color: #f3f3f3}
+    .evo_elm_lb_window span.select{color:#f58787;}
+    .evo_elm_lb_window span.select:before {
+        content: "";
+        border-left: 4px solid #f58787;
+        border-bottom: 4px solid #f58787;
+        width: 8px;
+        display: block;
+        height: 4px;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 10px;
+        margin-top: 3px;
+        box-sizing: content-box;
+    }
+    .eelb_i_i{max-height: 200px; overflow-y: scroll;}
+    .evo_elm_lb_window.show .eelb_in:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        margin-top: -15px;
+        left: 50%;
+        margin-left: -10px;
+        width: 21px;
+        height: 21px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMSIgaGVpZ2h0PSI5Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM4ODk4QUEiIGZpbGwtb3BhY2l0eT0iLjEiIGQ9Ik0xIDkuMDkyaDE5bC02LjQwMi02Ljc0Yy0xLjcxNy0xLjgwNi00LjQ4NS0xLjgtNi4xOTYgMEwxIDkuMDkzek0yMC4zNDIgOGwtNi4wMi02LjMzNmMtMi4xMDgtMi4yMi01LjUzOC0yLjIxOC03LjY0NSAwTC42NTggOGgxOS42ODR6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTcuNDAyIDIuMzUzYzEuNzExLTEuODAxIDQuNDgtMS44MDcgNi4xOTYgMEwyMCA5LjA5M0gxbDYuNDAyLTYuNzR6Ii8+PC9nPjwvc3ZnPg==);
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+/* plus minus */
+    .evo_plusminus_adjuster{display: flex;flex-direction: row}
+    .evo_plusminus_adjuster .evo_plusminus_change{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        color: #fff;
+        background-color: #c9c9c9;
+        display: inline-block;
+        line-height: 26px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: normal;
+        cursor: pointer;
+        position: relative;
+        top: 0;
+        padding: 0;
+        box-sizing: border-box;
+            flex: 0 0 30px;
+    }
+    .evo_elm_row .evo_field_plusminus_container.evo_field_container{
+        display: inline-block;
+        background-color: #f1f1f1;
+        border-radius: 25px; padding: 5px;
+    } 
+    .evo_plusminus_adjuster .evo_plusminus_change:hover{opacity: 0.7}
+    .evo_plusminus_adjuster .evo_plusminus_change.plu{
+        background-color: #3091d4;
+        top: 1px;line-height: 28px;
+    }
+    .evo_plusminus_adjuster em{
+        font-style: normal;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+    body .evo_elm_row .evo_plusminus_adjuster input.evo_plusminus_change_input{
+        border: none;
+        box-shadow: none;
+        margin: 0!important;
+        padding: 0 10px!important;
+        height: 30px;
+        width: 70px!important;
+        background-color: transparent;
+        text-align: center;
+    }
+/* color picker */
+    .evo_elm_color{display: block;height: 35px;width: 60px!important; border-radius: 25px; background-color: #888}
+/* Select in a row */
+    p.evo_row_select {display: flex;align-items: center;}
+    p.evo_row_select span.values{background-color: #e8e8e8;display: flex;padding: 0;
+        border-radius: 20px;overflow: hidden;padding:5px;flex-wrap: wrap;}
+
+    .innersection p.evo_row_select span.values{background-color: #c5c9d5}
+    
+    p.evo_row_select span span:hover{ color: #9c9c9c;}
+    p.evo_row_select span span.select{   background-color: var(--evo_color_1);color:#fff;border-radius: 20px}
+    
+    p.evo_row_select span span{padding:8px 15px;color:#636363;cursor: pointer;line-height: 1 ; margin-bottom: 5px;   }
+
+/* afterstatement field */
+    .evo_elm_afterstatement {
+            background-color: #ddd;
+        padding: 8px;margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+/* import/upload files */
+    .evo_data_upload_window{
+        background-color: #4c4c4c;
+        color: #fff;
+        width: 300px;
+        z-index: 10;
+        position: absolute;
+        bottom: 40px;
+        padding: 30px;
+        box-shadow: 0px 0px 20px 0px #4c4c4c;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .evo_data_upload_window > *{color:#fff;}
+    .evo_data_upload_window input{
+        background-color: var(--evo_color_1);padding:20px!important; margin-bottom: 10px;
+        border: none; box-shadow: none;width: 100%;
+        border-radius: 10px;
+    }
+
+    .evo_data_upload_window_close{
+        cursor: pointer;
+        color: #b3b3b3;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 14px;
+        border: 1px solid #b3b3b3;
+        border-radius: 50%;
+        font-family: var(--evo_main_font);
+        height: 22px;
+        width: 25px;
+        text-align: center;
+        padding-top: 3px;
+        opacity: 0.5;
+    }
+    .evolb_content .evo_data_upload_window.lightbox{
+        position: relative;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        color: var(--evo_color_1);
+        bottom: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .evolb_content .evo_data_upload_window.lightbox > *{color:var(--evo_color_1);}
+    .evolb_content .evo_data_upload_window.lightbox .evo_data_upload_window_close,
+    .evolb_content .evo_data_upload_window.lightbox h3{display: none;}
+    .evolb_content .evo_data_upload_window input{background-color: #e9e9e9}
+
+/* Tool tips */
+    .evo_elms{
+        position: absolute;
+        top:0;
+        z-index: 48392749832;
+        pointer-events: none;
+    }
+    .evo_elms .evo_tooltip_box{
+        -webkit-transition: transform .1s ease;
+        -moz-transition: transform .1s ease;
+        -ms-transition: transform .1s ease;
+        -o-transition: transform .1s ease;
+        transition: transform .1s ease;
+        pointer-events: none;
+        background-color: #3a4652;
+        color: #fff;
+        padding: 10px 12px;
+        font-size: 12px;
+        font-style: normal;
+        border-radius: 10px 10px 10px 0px;;
+        box-shadow: 0px 0px 10px 0px #0000004a;
+        position: relative;
+        opacity: 0;
+        display: inline-block;
+        transform: translateY(5px );
+        max-width: 200px;
+    }
+    .evo_elms .evo_tooltip_box.show{
+        opacity: 1;
+        transform: translateY(0px );
+    }
+    .evo_elms .evo_tooltip_box:before{
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 12px 12px 0 0;
+        border-color: #3a4652 transparent transparent transparent;
+        position: absolute;
+        bottom: 0;left:0;
+        margin-bottom: -12px;
+    }
+    .evo_elms .evo_tooltip_box.L{border-radius: 10px 10px 0px 10px;}
+    .evo_elms .evo_tooltip_box.L:before{
+        content: "";
+        border-width: 0 12px 12px 0 ;
+        border-color: transparent #3a4652 transparent  transparent;
+        left:auto;right:0px;
+    }
+    .ajdeToolTip.free:before{content:none;}
+    .ajdeToolTip:before{
+        content: "?";
+        font-style: normal;
+        display: inline-block;
+        color: #fff;
+        font-size: 10px;
+        margin-top: 3px;
+        background-color: var(--evo_color_1);
+        padding: 3px;
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        line-height: 10px;
+        opacity: 0.6;
+        box-sizing: border-box;
+        font-family: 'open sans'; font-weight: bold;
+    }
+    .ajdeToolTip:hover:before{opacity: 1;}
+    span.ajdeToolTip, .yesno_row span.ajdeToolTip{
+        padding-left: 0;
+        margin-left:4px;
+        text-align: center;
+        font-style: normal;
+        position: absolute;
+        width: 13px;
+        height: 14px;
+        line-height: 110%;
+        border-radius:0px;
+        color:#fff;
+        padding:0;
+        font-style:normal;
+        cursor: pointer;
+        display:inline-block;   box-sizing: content-box;    
+    }
+    .ajdeToolTip:hover, .yesno_row .ajdeToolTip:hover{opacity: 1}
+    .ajdeToolTip em{display:none;}
+   
+    /* overrides */
+    #eventon_widget_settings .ajdeToolTip:before{margin-top:2px;}
+    #ajdePOSH_outter label .ajdeToolTip{right: 10px;}
+    #ajdePOSH_outter .ajdeToolTip{ right: 0;top: 5px;  padding: 0;}
+
+/* in event metabox */
+    #evo_mb .evo_meta_elements label.ajde_yn_btn_label{margin:0;}
+    .evo_meta_elements .evo_elm_row
+        {padding:10px 0px;display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #dedede;}
+    .evo_meta_elements .evo_elm_row:last-child{border:none;}
+    .evo_meta_elements .evo_elm_row .evo_field_container{margin-bottom: 0px;width:50%;}
+    .evo_meta_elements .evo_elm_row .evo_field_container >* {width: 100%; box-sizing: border-box;}
+    .evo_meta_elements .evo_elm_row.evo_elm_notice{padding-bottom: 8px;}
+    .evo_meta_elements .evo_elm_row.yesno_row{padding-bottom: 15px;}
+    .evo_meta_elements .evo_elm_row .evo_field_container.visi{display: flex;}
+    .evo_meta_elements .evo_elm_row .evo_field_container.visi .evo_elm_color{margin-right: 10px}
+
+/* general meta boxes */
+    .evo_elm_row.yesno_row, .yesno_row{display: flex; padding:5px 0;justify-content: flex-start;}
+    .evo_elm_row.yesno_row .field_name{margin-bottom: 10px;}

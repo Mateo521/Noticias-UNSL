@@ -1,0 +1,25 @@
+/**
+* EventON Lite Wp-admin Styles
+* @version 2.0
+*/
+
+/* extend eventon */
+	.evo_ft_compare{}
+	.evo_ft_compare .evoft_row{
+		display: grid;
+	    --column-gap: 3%;
+	    --columns: 2;
+	    margin: 0 auto;
+	    grid-template-columns: repeat(var(--columns), calc((100% - var(--column-gap) * (var(--columns) - 1))/var(--columns)));
+	    column-gap: var(--column-gap);
+	}
+	.evo_ft_compare .evoft_cell{font-size: 14px;padding:10px;}
+	.evo_ft_compare .evoft_cell.evoft_cell_1{background-color: #e9e9e9}
+	.evo_ft_compare .evoft_header{
+		width: 100%; 
+	    grid-column: 1/3 span;
+	}
+    .evo_ft_compare .evoft_header.rowheader_style{
+    	padding:20px 0;
+    }
+    .evo_ft_compare .evoft_header span{font-size: 24px;}
