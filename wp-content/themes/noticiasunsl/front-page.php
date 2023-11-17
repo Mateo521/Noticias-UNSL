@@ -214,7 +214,7 @@ $latest_posts = get_posts($args);
 
             <div class="swiper-slide">
 
-                <div class="max-screen-2xl w-full  bg-cover">
+                <div class="max-screen-2xl w-full h-96  bg-cover">
 
                     <div style="align-items: flex-end;" class="relative h-full flex items-end  ">
 
