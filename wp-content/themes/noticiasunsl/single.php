@@ -16,9 +16,11 @@ if (have_posts()) :
                         <div class="flex items-center gap-3">
                             <button onclick="tipografia();">Dislexia</button>
                             <button onclick="blancoynegro();">Blanco y negro</button>
-                            <button onclick="sintesisdevoz();">Síntesis de voz</button>
+                            <button id="boton">Síntesis de voz</button>
                         </div>
                         <header class="entry-header">
+                            <p class="font-bold text-blue-800"><?php echo get_the_date(); ?></p>
+
                             <h1 class="text-4xl"><?php the_title(); ?></h1>
                         </header>
                         <?php
@@ -44,57 +46,34 @@ endif;
         document.documentElement.classList.toggle("grayscale");
     }
 
+    var button = true;
 
-
-    var synth = window.speechSynthesis;
-    var buton = true;
-
-    // Manejar la obtención de voces de forma asincrónica
-    synth.onvoiceschanged = function() {
-        console.log('El evento onvoiceschanged se ha activado.');
-        sintesisdevoz();
-    };
-
-    function sintesisdevoz() {
-        let textContent = document.getElementById('noticia');
-        if (!textContent) {
-            console.error('No se encontró el elemento con ID "noticia".');
-            return;
-        }
-        textContent = textContent.innerText;
-
+    function synthesisVoice() {
+        var synth = window.speechSynthesis;
+        var textContent = document.getElementById('noticia').innerText;
         var voices = synth.getVoices();
-      //  console.log('Voces disponibles:', voices.map(voice => voice.name));
         var utterance = new SpeechSynthesisUtterance(textContent);
 
-        if (buton) {
-            // Filtrar la voz por nombre ('Monica')
-            utterance.voice = voices.find(function(voice) {
-                return voice.name == 'Google español';
-            });
-        
-            if (!utterance.voice) {
-                console.error('No se encontró la voz "Google español".');
-                return;
-            }
+        console.log('Texto a sintetizar:', textContent);
 
-        
+        if (button) {
+            utterance.voice = voices.find(function(voice) {
+                return voice.name === 'Monica';
+            }) || voices[0];
+
+            console.log('Voz seleccionada:', utterance.voice);
 
             synth.speak(utterance);
-            buton = false;
+            button = false;
+            console.log('Iniciando síntesis de voz...');
         } else {
-            buton = !buton;
+            button = !button;
             synth.cancel();
+            console.log('Deteniendo síntesis de voz.');
         }
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('La página se ha cargado completamente.');
-        // No llamamos a sintesisdevoz() aquí, ya que se activará cuando onvoiceschanged se dispare.
-    });
-
-
-
+    document.getElementById('boton').addEventListener('click', synthesisVoice);
 
 
     /*
@@ -105,6 +84,9 @@ endif;
             $(this).wrap(imgLink);
         });
     });
+
+
+
     */
 </script>
 
@@ -112,6 +94,14 @@ endif;
 
 
 <style>
+@font-face {
+  font-family: 'OpenDyslexic-Regular';
+  src: url(<?php echo get_template_directory_uri() . '/assets/fonts/OpenDyslexic-Regular.otf'; ?>) format('opentype');
+  /* Puedes agregar otras propiedades, como font-weight y font-style según sea necesario. */
+}
+
+
+
     html {
         transition: filter 1s;
         /* Change "1s" to any time you'd like */
@@ -124,8 +114,11 @@ endif;
     }
 
     .tipog {
-        font-family: opendyslexic;
+        font-family: 'OpenDyslexic-Regular', sans-serif;
     }
+
+
+
 
     header h1 {
         padding: 15px 0;
@@ -142,10 +135,6 @@ endif;
     figure img {
         width: 100% !important;
         height: 100% !important;
-    }
-
-    #my-calendar {
-        padding: 10px;
     }
 </style>
 

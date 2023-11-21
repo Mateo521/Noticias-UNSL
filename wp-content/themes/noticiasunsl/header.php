@@ -7,7 +7,7 @@
   <meta name="description" content="Pendiente">
   <title>Noticias UNSL</title>
   <link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/72x72.png">
-
+  <link rel='stylesheet' id='eventon_dynamic_styles-css'  href='//scivz.unsl.edu.ar/noticias/wp-content/plugins/eventon/assets/css/eventon_dynamic_styles.css?ver=5.7.10' type='text/css' media='all' />
   <?php
   wp_head();
   ?>
@@ -18,7 +18,8 @@
 
   <nav class="bg-white border-gray-200 dark:bg-gray-900 fixed w-full" style="z-index: 100;">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center">
+  
+    <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/512x512.png" class="h-11 mr-3" alt="Flowbite Logo" />
         <span class="self-center text-2xl  whitespace-nowrap dark:text-white">Noticias UNSL</span>
       </a>
