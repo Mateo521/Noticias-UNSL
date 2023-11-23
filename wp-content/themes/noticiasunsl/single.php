@@ -72,7 +72,7 @@ if (have_posts()) :
 
                                 <?php
                                 foreach ($related_posts_ids as $related_post_id) {
-                                    echo '<p style="border-left:solid #163387 3px;"><a class="p-1" href="' . get_permalink($related_post_id) . '">-' . get_the_title($related_post_id) . '</a></p>';
+                                    echo '<p class="my-1" style="border-left:solid #163387 3px;"><a class="p-1" href="' . get_permalink($related_post_id) . '">-' . get_the_title($related_post_id) . '</a></p>';
                                 }
                             } else {
                                 ?>
