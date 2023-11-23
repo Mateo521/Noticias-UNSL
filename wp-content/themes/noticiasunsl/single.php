@@ -27,10 +27,57 @@ if (have_posts()) :
                         the_content();
                         ?>
 
-                        <p>Seguír leyendo:</p>
-                        <p>Titulo 1</p>
-                        <p>Titulo 2</p>
-                        <p>Titulo 3</p>
+                        <?php
+                        function get_related_posts_ids($post_id, $num_posts = 4)
+                        {
+                            $related_posts_ids = array();
+
+                            // Obtén las categorías de la entrada actual
+                            $categories = wp_get_post_categories($post_id);
+
+                            // Configura los argumentos para la consulta de publicaciones relacionadas
+                            $args = array(
+                                'category__in'   => $categories,
+                                'post__not_in'   => array($post_id),
+                                'posts_per_page' => $num_posts,
+                                'orderby'        => 'rand', // Cambia a 'date' si prefieres ordenar por fecha
+                            );
+
+                            // Realiza la consulta de publicaciones relacionadas
+                            $related_posts_query = new WP_Query($args);
+
+                            // Recorre los resultados y obtén los IDs de las publicaciones
+                            while ($related_posts_query->have_posts()) {
+                                $related_posts_query->the_post();
+                                $related_posts_ids[] = get_the_ID();
+                            }
+
+                            // Restaura los datos originales de la publicación
+                            wp_reset_postdata();
+
+                            return $related_posts_ids;
+                        }
+
+                        // Uso en single.php
+                        $current_post_id = get_the_ID();
+                        $related_posts_ids = get_related_posts_ids($current_post_id);
+
+                        // Muestra los títulos de las publicaciones relacionadas
+                        if (!empty($related_posts_ids)) {
+                        ?>
+                            <p>Seguir leyendo2:</p>
+                        <?php
+                            foreach ($related_posts_ids as $related_post_id) {
+                                echo '<p><a href="' . get_permalink($related_post_id) . '">-' . get_the_title($related_post_id) . '</a></p>';
+                            }
+                        } else {
+                            ?>
+                            <p>No hay noticias relacionadas.</p>
+                            <?php
+                        }
+
+                        ?>
+
                     </div>
                 </div>
             </div>
