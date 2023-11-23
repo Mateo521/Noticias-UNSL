@@ -27,6 +27,10 @@ if (have_posts()) :
                         the_content();
                         ?>
 
+                        <p>Seguír leyendo:</p>
+                        <p>Titulo 1</p>
+                        <p>Titulo 2</p>
+                        <p>Titulo 3</p>
                     </div>
                 </div>
             </div>
@@ -36,6 +40,10 @@ if (have_posts()) :
 endif;
 
 ?>
+
+
+
+
 <!-- PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
 <script>
     function tipografia() {
@@ -93,11 +101,14 @@ endif;
 
 
 
+
+
+
 <style>
-@font-face {
-  font-family: 'OpenDyslexic-Regular';
-  src: url(<?php echo get_template_directory_uri() . '/assets/fonts/OpenDyslexic-Regular.otf'; ?>) format('opentype');
-}
+    @font-face {
+        font-family: 'OpenDyslexic-Regular';
+        src: url(<?php echo get_template_directory_uri() . '/assets/fonts/OpenDyslexic-Regular.otf'; ?>) format('opentype');
+    }
 
 
 
@@ -178,9 +189,6 @@ UNSL
         });
     });
 </script>
-
-
-
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/lightbox2-2.11.4/dist/js/lightbox-plus-jquery.js"></script>
 
 <?php get_footer(); ?>
