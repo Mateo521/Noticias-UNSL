@@ -26,58 +26,62 @@ if (have_posts()) :
                         <?php
                         the_content();
                         ?>
-
-                        <?php
-                        function get_related_posts_ids($post_id, $num_posts = 4)
-                        {
-                            $related_posts_ids = array();
-
-                            // Obtén las categorías de la entrada actual
-                            $categories = wp_get_post_categories($post_id);
-
-                            // Configura los argumentos para la consulta de publicaciones relacionadas
-                            $args = array(
-                                'category__in'   => $categories,
-                                'post__not_in'   => array($post_id),
-                                'posts_per_page' => $num_posts,
-                                'orderby'        => 'rand', // Cambia a 'date' si prefieres ordenar por fecha
-                            );
-
-                            // Realiza la consulta de publicaciones relacionadas
-                            $related_posts_query = new WP_Query($args);
-
-                            // Recorre los resultados y obtén los IDs de las publicaciones
-                            while ($related_posts_query->have_posts()) {
-                                $related_posts_query->the_post();
-                                $related_posts_ids[] = get_the_ID();
-                            }
-
-                            // Restaura los datos originales de la publicación
-                            wp_reset_postdata();
-
-                            return $related_posts_ids;
-                        }
-
-                        // Uso en single.php
-                        $current_post_id = get_the_ID();
-                        $related_posts_ids = get_related_posts_ids($current_post_id);
-
-                        // Muestra los títulos de las publicaciones relacionadas
-                        if (!empty($related_posts_ids)) {
-                        ?>
-                            <p>Seguir leyendo2:</p>
-                        <?php
-                            foreach ($related_posts_ids as $related_post_id) {
-                                echo '<p><a href="' . get_permalink($related_post_id) . '">-' . get_the_title($related_post_id) . '</a></p>';
-                            }
-                        } else {
-                            ?>
-                            <p>No hay noticias relacionadas.</p>
+                        <div class="bg-gray-200 p-2">
                             <?php
-                        }
+                            function get_related_posts_ids($post_id, $num_posts = 4)
+                            {
+                                $related_posts_ids = array();
 
-                        ?>
+                                // Obtén las categorías de la entrada actual
+                                $categories = wp_get_post_categories($post_id);
 
+                                // Configura los argumentos para la consulta de publicaciones relacionadas
+                                $args = array(
+                                    'category__in'   => $categories,
+                                    'post__not_in'   => array($post_id),
+                                    'posts_per_page' => $num_posts,
+                                    'orderby'        => 'rand', // Cambia a 'date' si prefieres ordenar por fecha
+                                );
+
+                                // Realiza la consulta de publicaciones relacionadas
+                                $related_posts_query = new WP_Query($args);
+
+                                // Recorre los resultados y obtén los IDs de las publicaciones
+                                while ($related_posts_query->have_posts()) {
+                                    $related_posts_query->the_post();
+                                    $related_posts_ids[] = get_the_ID();
+                                }
+
+                                // Restaura los datos originales de la publicación
+                                wp_reset_postdata();
+
+                                return $related_posts_ids;
+                            }
+
+                            // Uso en single.php
+                            $current_post_id = get_the_ID();
+                            $related_posts_ids = get_related_posts_ids($current_post_id);
+
+                            // Muestra los títulos de las publicaciones relacionadas
+                            if (!empty($related_posts_ids)) {
+                            ?>
+                                <div class="flex gap-3">
+                                    <p> Seguir leyendo:</p>
+                                </div>
+
+
+                                <?php
+                                foreach ($related_posts_ids as $related_post_id) {
+                                    echo '<p style="border-left:solid #163387 3px;"><a class="p-1" href="' . get_permalink($related_post_id) . '">-' . get_the_title($related_post_id) . '</a></p>';
+                                }
+                            } else {
+                                ?>
+                                <p>No hay noticias relacionadas.</p>
+                            <?php
+                            }
+
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,6 +156,12 @@ endif;
 
 
 <style>
+    /*
+    a, a:hover, a:focus, a:visited{
+        color: inherit;
+        text-decoration: none;
+    }
+    */
     @font-face {
         font-family: 'OpenDyslexic-Regular';
         src: url(<?php echo get_template_directory_uri() . '/assets/fonts/OpenDyslexic-Regular.otf'; ?>) format('opentype');
@@ -184,11 +194,11 @@ endif;
     #noticia p {
         padding: 10px 0 !important;
     }
-
+/*
     #noticia a {
         color: blue;
     }
-
+*/
     figure img {
         width: 100% !important;
         height: 100% !important;
