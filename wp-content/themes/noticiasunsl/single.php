@@ -97,7 +97,6 @@ endif;
 @font-face {
   font-family: 'OpenDyslexic-Regular';
   src: url(<?php echo get_template_directory_uri() . '/assets/fonts/OpenDyslexic-Regular.otf'; ?>) format('opentype');
-  /* Puedes agregar otras propiedades, como font-weight y font-style según sea necesario. */
 }
 
 
