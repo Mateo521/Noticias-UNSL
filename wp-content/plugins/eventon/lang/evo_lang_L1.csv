@@ -1,0 +1,236 @@
+evcal_lang_1,enero
+evcal_lang_2,febrero
+evcal_lang_3,marzo
+evcal_lang_4,abril
+evcal_lang_5,mayo
+evcal_lang_6,Junio
+evcal_lang_7,julio
+evcal_lang_8,agosto
+evcal_lang_9,septiembre
+evcal_lang_10,octubre
+evcal_lang_11,noviembre
+evcal_lang_12,diciembre
+evo_lang_3Lm_1,ene
+evo_lang_3Lm_2,
+evo_lang_3Lm_3,
+evo_lang_3Lm_4,abr
+evo_lang_3Lm_5,
+evo_lang_3Lm_6,
+evo_lang_3Lm_7,
+evo_lang_3Lm_8,ago
+evo_lang_3Lm_9,
+evo_lang_3Lm_10,
+evo_lang_3Lm_11,
+evo_lang_3Lm_12,dic
+evo_lang_1Lm_1,e
+evo_lang_1Lm_2,
+evo_lang_1Lm_3,
+evo_lang_1Lm_4,
+evo_lang_1Lm_5,
+evo_lang_1Lm_6,
+evo_lang_1Lm_7,
+evo_lang_1Lm_8,
+evo_lang_1Lm_9,
+evo_lang_1Lm_10,
+evo_lang_1Lm_11,
+evo_lang_1Lm_12,
+evcal_lang_day1,lunes
+evcal_lang_day2,martes
+evcal_lang_day3,miércoles
+evcal_lang_day4,jueves
+evcal_lang_day5,viernes
+evcal_lang_day6,sábado
+evcal_lang_day7,domingo
+evo_lang_3Ld_1,lun
+evo_lang_3Ld_2,mar
+evo_lang_3Ld_3,mie
+evo_lang_3Ld_4,jue
+evo_lang_3Ld_5,vie
+evo_lang_3Ld_6,sab
+evo_lang_3Ld_7,dom
+evo_lang_am,
+evo_lang_pm,
+evcal_lang_noeve,Sin Eventos 
+no-events-on-the-list-at-this-time,
+evcal_lang_allday,Todo el Dia
+evcal_lang_yrrnd,
+evcal_lang_mntlng,
+evcal_lang_events,Eventos
+event,Evento
+evcal_lang_sme,Ver más eventos
+evcal_evcard_evcancel,Evento Cancelado 
+featured,Destacado
+evo_lang_eventtags,
+evo_lang_yes,
+evo_lang_no,
+evo_lang_more,Más 
+evoSR_001,Buscar Eventos
+evoSR_001a,Buscar Eventos en el Calendario
+evoSR_002,Buscando
+evoSR_003,
+evoSR_004,
+download-all-events-as-ics-file,
+evcal_lang_et1,
+evolang_event_type_85,Escuela Normal Juan Pascual Pringles
+evolang_event_type_79,Facultad de Ciencias de la Salud
+evolang_event_type_80,Facultad de Ciencias Económicas, Jurídicas y Sociales
+evolang_event_type_77,Facultad de Ciencias Físico, Matemáticas y Naturales
+evolang_event_type_78,Facultad de Ciencias Humanas
+evolang_event_type_81,Facultad de Ingeniería y Ciencias Agropecuarias
+evolang_event_type_83,Facultad de Psicología
+evolang_event_type_82,Facultad de Química, Bioquímica y Farmacia
+evolang_event_type_84,Facultad de Urbanismo y Turismo
+evcal_lang_et2,
+evolang_event_type_2_66,ACADÉMICA
+evolang_event_type_2_72,Acreditación e Información Institucional
+evolang_event_type_2_68,ASUNTOS ESTUDIANTILES
+evolang_event_type_2_69,CIENCIA Y TECNOLOGÍA
+evolang_event_type_2_71,Comunicación Institucional
+evolang_event_type_2_70,Coordinación y Planificación Institucional
+evolang_event_type_2_64,EXTENSIÓN
+evolang_event_type_2_65,GENERAL
+evolang_event_type_2_67,HACIENDA Y ADMINISTRACIÓN
+evolang_event_type_2_60,INFRAESTRUCTURA Y SERVICIOS
+evolang_event_type_2_52,POSGRADO
+evolang_event_type_2_53,RELACIONES INTERINSTITUCIONALES
+evolang_event_type_2_58,VINCULACIÓN TECNOLÓGICA Y SOCIAL
+evcal_lang_et3,
+evolang_event_type_3_76,Merlo
+evolang_event_type_3_73,San Luis
+evolang_event_type_3_75,Tilisarao
+evolang_event_type_3_74,Villa Mercedes
+evcal_lang_evloc,Lugar de Evento
+events-at-this-location,
+evcal_lang_evorg,Organizador de evento
+events-by-this-organizer,
+event-tag,
+multi-data-type-1,
+multi-data-type-2,
+multi-data-type-3,
+evcal_lang_jumpmonths,
+evcal_lang_jumpmonthsM,
+evcal_lang_jumpmonthsY,
+evcal_lang_sopt,Filtrar Eventos
+evcal_lang_sort,
+evcal_lang_sdate,
+evcal_lang_sposted,
+evcal_lang_stitle,
+evcal_lang_all,Todo
+evcal_lang_gototoday,Mes Actual 
+evcal_lang_apply_filters,
+past-&-future-events,Eventos futuros y pasados
+only-past-events,Solo eventos pasados 
+only-future-events,solo eventos futuros
+evcal_lang_location_name,Lugar
+evcal_lang_location,Lugar
+evcal_evcard_loc,Lugares
+evcalL_getdir_placeholder,
+evcalL_getdir_title,
+evcal_lang_time,Hora
+evcal_lang_repeats,Futuras reiteraciones del evento
+evcal_lang_scolor,
+evcal_lang_at,
+evcal_evcard_details,Detalles del Evento
+evcal_evcard_org,Organizador
+evcal_lang_close,
+evcal_lang_more,Ver Más
+evcal_lang_less,Ver Menos
+evcal_evcard_tix1,
+evcal_evcard_btn1,
+evcal_evcard_tix2,
+evcal_evcard_btn2,
+evcal_evcard_cap,
+evcal_evcard_learnmore,
+evcal_evcard_learnmore2,Más información
+login-required-to-see-the-information,
+share-on-facebook,
+share-on-twitter,
+share-on-linkedin,
+share-on-google-plus,
+share-on-pinterest,
+evcal_evcard_calncal,
+evcal_evcard_calgcal,
+evcal_evcard_addics,
+evcal_evcard_addgcal,
+login,
+you-must-login-to-see-this-event,
+this-is-a-repeating-event,Este evento se repite 
+evoAUL_evn,
+evoAUL_est,
+evoAUL_esdt,
+evoAUL_eedt,
+evcal_evcard_details_au,
+evoAUL_ec,
+evoAU_pseld,
+evoAUL_ssl,
+evoAUL_sfl,
+evoAUL_lca,
+evoAUL_ln,
+evoAUL_lcor,
+evoAUL_llink,
+evoAUL_sso,
+evoAU_pseod,
+evoAUL_eo,
+evoAUL_eoc,
+evoAUL_eol,
+evoAUL_eoa,
+evoAUL_lml,
+evoAUL_cn,
+evoAUL_edit,
+evoAUL_stet1,
+evoAUL_stet2,
+evoAUL_stet3,
+evoAUL_ese,
+evoAUL_ei,
+remove-image,
+evoAUL_001,
+evoAUL_002,
+evoAUL_ere1,
+evoAUL_ere2,
+evoAUL_ere3,
+evoAUL_ere4,
+evoAUL_ere4y,
+evoAUL_ere5,
+evoAUL_ere6,
+evoAUL_ere7,
+evoAUL_fn,
+evoAUL_ea,
+evoAUL_cap,
+evoAUL_img002,
+evoAUL_img001,
+evoAU_add,
+evoAUL_lm1,
+evoAUL_ocn,
+(text),
+(link),
+evoAUL_se,
+submit-another-event,
+update-event,
+evoAUL_00l1,
+evoAUL_00l2,
+evoAUL_phsd,
+evoAUL_phst,
+evoAUL_phed,
+evoAUL_phet,
+evoAUL_ux1,
+evoAUL_ux2,
+evoAUL_ux3,
+evoAUL_ux4,
+evoAUL_ux4a,
+evoAUL_ymlse,
+evoAUL_nof1,
+evoAUL_nof2,
+evoAUL_nof3,
+evoAUL_nof4,
+evoAUL_nof5,
+evoAUL_nof6,
+my-eventon-events-manager,
+login-required-to-manage-your-submitted-events,
+login-now,
+hello,
+from-your-event-manager-dashboard-you-can-view-your-submitted-events-and-manage-them-in-here,
+back-to-my-events,
+status,
+date,
+submitted-events,
+you-do-not-have-submitted-events,
