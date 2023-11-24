@@ -607,6 +607,7 @@ $videos = obtener_videos_de_youtube();
 </div>
 
 
+<div id="ww_f3c2f35d065a9" v='1.3' loc='id' a='{"t":"responsive","lang":"es","sl_lpl":1,"ids":["wl6235"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Más previsiones: <a href="https://oneweather.org/de/deutschland/21_tage/" id="ww_f3c2f35d065a9_u" target="_blank">Wetter vorschau 21 tage</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_f3c2f35d065a9"></script>
         </div>
     </div>
 </div>

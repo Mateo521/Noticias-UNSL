@@ -14,3 +14,7 @@ RewriteRule . /Noticias-UNSL/index.php [L]
 </IfModule>
 
 # END WordPress
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.noticias\.unsl\.edu\.ar [NC]
+RewriteRule ^(.*)$ https://noticias.unsl.edu.ar/$1 [L,R=301]
