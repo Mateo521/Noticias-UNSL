@@ -62,7 +62,7 @@ function obtener_videos_de_youtube() {
     } else {
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE'; //institucional
-       
+        
         $api_url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$playlistid&maxResults=$max&key=$key&order=date";
        $response = wp_remote_get($api_url);
 
@@ -148,18 +148,6 @@ function my_pagination($args = array())
 
     return $output;
 }
-
-function enqueue_eventon_scripts() {
-    // Asegúrate de reemplazar 'eventon_script_1', 'eventon_script_2', etc., con los nombres reales de los archivos JavaScript de EventON
-    wp_enqueue_script('eventon_script_1', plugins_url('/eventon/assets/js/eventon_script.js'), array('jquery'), null, true);
-    wp_enqueue_script('eventon_script_2', plugins_url('/eventon/assets/js/eventon_functions.js'), array('jquery'), null, true);
-
-    // Si también hay estilos, agrégales
-    wp_enqueue_style('eventon_style', plugins_url('/eventon/assets/css/eventon_styles.css'));
-}
-add_action('wp_enqueue_scripts', 'enqueue_eventon_scripts', 99); // Usar una prioridad mayor
-
-
 
 
 ?>
