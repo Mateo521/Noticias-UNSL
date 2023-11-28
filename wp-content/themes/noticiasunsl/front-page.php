@@ -26,7 +26,7 @@ $latest_posts = get_posts($args);
             ?>
 
             <div class="swiper-slide">
-                <div class="max-screen-2xl w-full h-96 bg-cover" id="slide-e" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>); background-repeat: no-repeat;">
+                <div class="max-screen-2xl w-full bg-cover" id="slide-e" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>); background-repeat: no-repeat; height:32rem;">
                     <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
                         <div class="text-white p-12 z-10" style="z-index: 1;">
                             <p><?php echo get_the_category_list(', ', '', $post->ID); ?></p>

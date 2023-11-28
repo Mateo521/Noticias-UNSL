@@ -104,12 +104,7 @@ if (have_posts()) :
 <?php
     endwhile;
 endif;
-
 ?>
-
-
-
-
 <!-- PRUEBAS PARA NOTICIAS.UNSL.EDU.AR -->
 <script>
     function tipografia() {
