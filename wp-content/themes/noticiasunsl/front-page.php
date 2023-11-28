@@ -40,7 +40,7 @@ $latest_posts = get_posts($args);
             </div>
         <?php endforeach; ?>
 
-        wp_reset_postdata(); ?>
+    
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -54,7 +54,7 @@ $latest_posts = get_posts($args);
 </div>
 
 
-< <div class="flex justify-center py-8">
+ <div class="flex justify-center py-8">
     <div class="w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto w-full">
             <div class="grid-container-1 w-full">

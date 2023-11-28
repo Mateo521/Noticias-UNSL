@@ -8,8 +8,6 @@ if (have_posts()) :
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/lightbox2-2.11.4/dist/css/lightbox.min.css">
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-
             <div class="w-full py-12">
                 <div class="flex justify-center">
                     <div class="max-w-screen-md w-full  p-3" id="noticia">
@@ -19,9 +17,6 @@ if (have_posts()) :
                             <button id="boton">Síntesis de voz</button>
                         </div>
                         <header class="entry-header">
-
-
-
                             <p class="font-bold text-blue-800"><?php echo get_the_date(); ?></p>
                             <h1 class="text-4xl"><?php the_title(); ?></h1>
                             <?php $categories = get_the_category();
@@ -36,16 +31,12 @@ if (have_posts()) :
                                     }
                                 }
                             }
-
-
-
                             if (has_post_thumbnail()) {
                                 echo '<div class="post-thumbnail">';
                                 the_post_thumbnail();
                                 echo '</div>';
                             }
                             ?>
-
                         </header>
                         <?php
                         the_content();
