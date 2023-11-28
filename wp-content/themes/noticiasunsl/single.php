@@ -32,7 +32,7 @@ if (have_posts()) :
                                 }
                             }
                             if (has_post_thumbnail()) {
-                                echo '<div class="post-thumbnail">';
+                                echo '<div class="post-thumbnail py-5">';
                                 the_post_thumbnail();
                                 echo '</div>';
                             }
