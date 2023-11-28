@@ -62,7 +62,7 @@ function obtener_videos_de_youtube() {
     } else {
         $max = '5';
         $playlistid = 'PLPHjzCOfwhCU8wJYO-SazoXjbzYV780UE'; //institucional
-       
+    
         $api_url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=$playlistid&maxResults=$max&key=$key&order=date";
        $response = wp_remote_get($api_url);
 
@@ -149,5 +149,14 @@ function my_pagination($args = array())
     return $output;
 }
 
+function cargar_scripts_eventon() {
+    wp_deregister_script('eventon');
+    wp_register_script('eventon', 'http://localhost/Noticias-UNSL/wp-content/plugins/eventon/assets/js/eventon_functions.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('eventon');
+}
+add_action('wp_enqueue_scripts', 'cargar_scripts_eventon');
+
+
+add_image_size('size_thumbnail',400, 400, true);
 
 ?>

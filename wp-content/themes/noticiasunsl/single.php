@@ -22,6 +22,14 @@ if (have_posts()) :
                             <p class="font-bold text-blue-800"><?php echo get_the_date(); ?></p>
 
                             <h1 class="text-4xl"><?php the_title(); ?></h1>
+                            <?php
+                                    if (has_post_thumbnail()) {
+                                        echo '<div class="post-thumbnail">';
+                                        the_post_thumbnail();
+                                        echo '</div>';
+                                    }                          
+                            ?>
+
                         </header>
                         <?php
                         the_content();
@@ -194,7 +202,8 @@ endif;
     #noticia p {
         padding: 10px 0 !important;
     }
-/*
+
+    /*
     #noticia a {
         color: blue;
     }

@@ -2,7 +2,7 @@
 get_header();
 $current_category = get_queried_object();
 if ($current_category) {
-?>
+    ?>
     <h1 class="m-0 py-3 bg-white text-center font-bold">Categoría: <?php echo $current_category->name; ?></h1>
     <?php
     $total_posts = wp_count_posts();
@@ -16,18 +16,15 @@ if ($current_category) {
 
                         <div class="flex flex-col w-full my-6">
                             <?php
-                            $content = get_the_content();
-                            preg_match('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches);
-                            if ($matches) {
-                                $img_src = $matches[1];
-                                echo '<div class="entry-thumb"><img  src="' . $img_src . '" alt="Imagen de la noticia"></div>';
+                            if (has_post_thumbnail()) {
+                                echo '<div class="entry-thumb w-full">';
+                                the_post_thumbnail('size_thumbnail'); // Puedes ajustar el tamaño de la imagen según tus necesidades
+                                echo '</div>';
                             }
                             ?>
-                            <div class="p-6 w-full  bg-white h-full shadow-lg shadow-gray-500/50">
-
-
+                            <div class="p-6 w-full bg-white h-full shadow-lg shadow-gray-500/50">
                                 <h3 class="entry-title font-bold py-4" style="color:#07376A;"><?php the_title(); ?></h3>
-                                <div class="entry-thumb">
+                                <div class="entry-content">
                                     <a href="<?php the_permalink(); ?>">
                                         <?php the_excerpt(); ?>
                                     </a>
@@ -55,12 +52,14 @@ if ($current_category) {
         </div>
     <?php else : ?>
         <p>No se encontraron entradas en esta categoría.</p>
-<?php endif;
-} else {
-    echo '<h1>Categoría no encontrada</h1>';
+    <?php endif;
 }
 ?>
 <style>
+    .entry-thumb img{
+   width: 100%;
+   height: 100%;
+    }
     .pagination {
 
         justify-content: center;
