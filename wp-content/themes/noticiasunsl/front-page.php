@@ -16,45 +16,30 @@ $latest_posts = get_posts($args);
     <div class="swiper-wrapper">
         <?php foreach ($latest_posts as $post) : setup_postdata($post); ?>
             <?php
-            // Obtener todas las imágenes adjuntas al post
-            $attachments = get_posts(array(
-                'post_type'      => 'attachment',
-                'posts_per_page' => -1,
-                'post_parent'    => $post->ID,
-                'order'          => 'ASC'
-            ));
+            // Obtener la URL de la imagen destacada
+            $thumbnail_url = get_the_post_thumbnail_url($post->ID, 'full');
 
-            if ($attachments) {
-                // Obtener la URL de la primera imagen adjunta
-                $first_attachment = reset($attachments); // Obtiene el primer elemento del array
-                $thumbnail_url = wp_get_attachment_url($first_attachment->ID);
-            } else {
-                // Si no hay imágenes adjuntas, proporcionar una URL de imagen de respaldo
+            if (!$thumbnail_url) {
+                // Si no hay imagen destacada, proporcionar una URL de imagen de respaldo
                 $thumbnail_url = 'img.img'; // Reemplaza esto con la URL de tu imagen de respaldo
             }
             ?>
 
-
             <div class="swiper-slide">
-
-                <div class="max-screen-2xl w-full h-96 bg-cover" id="slide-e" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>);  background-repeat:no-repeat;">
-
+                <div class="max-screen-2xl w-full h-96 bg-cover" id="slide-e" style="background-image: url(<?php echo esc_url($thumbnail_url); ?>); background-repeat: no-repeat;">
                     <div style="align-items: flex-end;" class="relative h-full flex items-end justify-center ">
-
                         <div class="text-white p-12 z-10" style="z-index: 1;">
                             <p><?php echo get_the_category_list(', ', '', $post->ID); ?></p>
                             <a href="<?php echo esc_url(get_permalink($post->ID)); ?>">
                                 <h1 class="text-4xl"><?php echo get_the_title($post->ID); ?></h1>
                             </a>
                         </div>
-
-                        <div class="absolute h-96 w-full"  style="background: rgb(0,0,0);background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);"></div>
+                        <div class="absolute h-96 w-full" style="background: rgb(0,0,0); background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);"></div>
                     </div>
-
-
                 </div>
             </div>
-        <?php endforeach;
+        <?php endforeach; ?>
+
         wp_reset_postdata(); ?>
     </div>
     <div class="swiper-button-next"></div>
@@ -633,27 +618,27 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,1,0) 100%);  height
 
 
     <style>
-       #slide-e {
-    animation: desp-x 50s infinite;
-}
+        #slide-e {
+            animation: desp-x 50s infinite;
+        }
 
-@media screen and (min-width: 766px) {
-    #slide-e {
-        animation: desp-y 75s infinite;
-    }
-}
+        @media screen and (min-width: 766px) {
+            #slide-e {
+                animation: desp-y 75s infinite;
+            }
+        }
 
-@keyframes desp-x {
-    50% {
-        background-position: 100% 0;
-    }
-}
+        @keyframes desp-x {
+            50% {
+                background-position: 100% 0;
+            }
+        }
 
-@keyframes desp-y {
-    50% {
-        background-position: 0 100%;
-    }
-}
+        @keyframes desp-y {
+            50% {
+                background-position: 0 100%;
+            }
+        }
 
         iframe {
             height: 500px;
