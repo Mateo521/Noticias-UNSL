@@ -19,17 +19,35 @@ if (have_posts()) :
                             <button id="boton">Síntesis de voz</button>
                         </div>
                         <header class="entry-header">
+
+
+
                             <p class="font-bold text-blue-800"><?php echo get_the_date(); ?></p>
-
                             <h1 class="text-4xl"><?php the_title(); ?></h1>
-                            <?php
-                                    if (has_post_thumbnail()) {
-                                        echo '<div class="post-thumbnail">';
-                                        the_post_thumbnail();
-                                        echo '</div>';
-                                    }                          
-                            ?>
 
+                            <?php
+
+                            if (has_post_thumbnail()) {
+                                echo '<div class="post-thumbnail">';
+                                the_post_thumbnail();
+                                echo '</div>';
+                            }
+                            ?>
+                            <?php $categories = get_the_category();
+
+                            foreach ($categories as $index => $category) {
+                                if ($category->slug !== "sin-categoria" && $category->slug !== "podcast") {
+                                    $category_link = get_category_link($category->term_id); // Obtenemos el enlace de la categoría
+                                    echo '<a href="' . esc_url($category_link) . '">' . esc_html($category->name) . '</a>';
+
+                                    if ($index !== count($categories) - 1) {
+                                        echo ', '; // Agregar coma y espacio entre categorías
+                                    }
+                                }
+                            }
+
+
+                            ?>
                         </header>
                         <?php
                         the_content();
